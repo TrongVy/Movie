@@ -1,0 +1,1 @@
+export const Fetch_Movie_Detail = "Movie_Detail"

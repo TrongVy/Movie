@@ -1,0 +1,178 @@
+.movie_detail{
+    margin-top: 100px;
+ 
+    padding:10px;
+    &__header{
+        display:flex;
+        max-height: 400px;
+        padding:0 100px;
+        &__left{
+            position: relative;
+            border: 2px solid gray;
+            padding:5px;
+            background: #fae2a2;
+            box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+            margin-right: 20px;
+            transition: all 0.5s ease-in-out;
+            &__trailer{ 
+                position:absolute;
+                z-index: -1;
+                bottom:0px;left:0px;
+                opacity: 0;
+                transition: all 0.5s ease-in-out;
+                a{            
+                text-decoration: none;
+                padding: 5px 10px;
+                color:black;
+                background: #e00d7a;
+                border-radius:20px 0px 20px 0px;
+                font-size: 20px;
+                overflow: hidden;
+                font-weight: bold;
+                &:hover{
+                    text-decoration: none;
+                    outline:none;
+                    font-size: 22px;
+                    color:white;
+                }
+            }
+        }
+            img{
+                width: auto;
+                height: 380px;
+                transform:scale(1);
+                overflow: hidden;
+                transition: all 0.4s ease-in-out;
+                &:hover{
+                    transform:scale(1.1);
+                }
+            }
+           &:hover{
+            .movie_detail__header__left__trailer{
+                opacity:1;
+                left:80px;
+                bottom:15px;
+                z-index: 1;
+            }
+            img{
+                transform:scale(1.1);
+            }
+           }
+        }
+        &__right{
+            padding:20px 20px;
+            color:white;
+            text-align: left;
+            font-size: 20px;
+            background: #f18720;
+            box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+            h2{
+                color:black;
+            }
+            &__A{
+                span{
+                    color:black;
+                    background:white;
+                    padding:10px 20px;
+                    border-radius:50px 0px 50px 0px;
+                }
+            }
+            &__B{
+                text-align: left;
+                &__8{
+                    color:black;
+                    font-weight: 600;
+                    background:white;
+                    padding:20px 30px;
+                    font-size: 18px;
+                    border:2px solid rgb(32, 222, 255);
+                    border-radius:80px 0px 80px 0px;
+                }
+            }
+         
+        }
+    }   
+    
+}
+.movieDetail{
+    background-color: #f4c545;
+}
+
+@media (max-width:1100px) {
+    .movie_detail__header{
+        padding:0 50px;
+    }
+}
+@media (max-width:990px) {
+    .movie_detail__header{
+        padding:0 10px;
+        font-size: 16px;
+        &__left{
+            width:250px;
+            img{
+                width:230px;
+            }
+            
+        }
+        &__right__B__8{
+            font-size: 16px;
+            padding:10px 10px 10px 30px ;
+        }
+    }
+}
+@media (max-width:760px) {
+    .movie_detail__header{
+        padding:0 5px;
+        display:block;
+        max-height: 100%;
+        &__left{
+            width:100%;
+            margin:0px 0px 10px 0px ;
+            padding:0px;
+            &__trailer{
+                opacity: 1;
+                bottom:20px;left:200px;
+            }
+            img{
+                width:230px;
+            }
+            &:hover{
+                .movie_detail__header__left__trailer{
+                    bottom:20px;left:310px;
+                }
+            }
+        }
+        &__right__B__8{
+            font-size: 16px;
+            padding:10px 10px 10px 30px ;
+        }
+    }
+}
+@media (max-width:580px) {
+    .movie_detail__header{
+        padding:0 5px;
+        display:block;
+        max-height: 100%;
+        &__left{
+            width:100%;
+            margin:0px 0px 10px 0px ;
+            padding:0px;
+            &__trailer{
+                opacity: 1;
+                bottom:20px;left:100px;
+            }
+            img{
+                width:230px;
+            }
+            &:hover{
+                .movie_detail__header__left__trailer{
+                    bottom:20px;left:160px;
+                }
+            }
+        }
+        &__right__B__8{
+            font-size: 16px;
+            padding:10px 10px 10px 30px ;
+        }
+    }
+}
