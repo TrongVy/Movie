@@ -1,0 +1,16 @@
+.img__member {
+  border: 3px solid #71336a;
+  border-radius: 26px;
+  box-shadow: 10px 10px 0px #0000004d;
+  width: 90%;
+}
+.slick-list {
+  width: 76rem;
+  margin: auto;
+  position: relative;
+  left: 0.5rem;
+  height: 28rem;
+  img {
+    display: inline;
+  }
+}

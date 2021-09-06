@@ -1,6 +1,6 @@
-import DemoHook from "components/DemoHook/DemoHook";
 import About from "containers/client/about/About";
 import Home from "containers/client/home/Home";
+import KhuyenMai from "containers/client/khuyenMai/KhuyenMai";
 import Login from "containers/client/login/Login";
 import MovieDetail from "containers/client/movieDetail/MovieDetail";
 import Register from "containers/client/register/Register";
@@ -13,6 +13,11 @@ export const clientRoutes =[
         exact:true,
         path :"/",
         component:Home
+    },
+    {
+        exact:true,
+        path :"/khuyenmai",
+        component:KhuyenMai
     },
     {
         exact:false,
@@ -48,10 +53,5 @@ export const clientRoutes =[
         exact:false,
         path :"/seat-plan/:showtimeId",
         component:seatPlant
-    },
-    {
-        exact:false,
-        path :"/demohook",
-        component:DemoHook
     },
 ]

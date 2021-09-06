@@ -17,7 +17,7 @@ const movieListReducer = (state = initialState, { type, payload }) => {
         }
         case Fetch_All_Movie_Success: {
             // console.log('movie',payload)
-            return { ...state, listMovie: payload, loading: false }
+            return { ...state, listMovie: payload.content, loading: false }
         }
         case Fetch_All_Movie_False: {
             return { ...state, err: payload,loading: false }

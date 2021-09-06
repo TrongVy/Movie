@@ -1,0 +1,142 @@
+.promotion-list-wrap {
+  position: relative;
+  width: 100%;
+  z-index: 1;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.promotion-list-wrap .promotion-block {
+  position: relative;
+  width: 100%;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.promotion-list-wrap .promotion-block .promotion-block-pic {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  width: 40%;
+  margin-right: -110px;
+  z-index: 2;
+  border: 5px solid #fff;
+  -webkit-box-shadow: 5px 5px 0 #00000080;
+          box-shadow: 5px 5px 0 #00000080;
+  max-width: 616px;
+  max-height: 348px;
+  overflow: hidden;
+}
+
+.promotion-list-wrap .promotion-block .promotion-block-pic .zoom.skew {
+  background-color: rgba(0, 0, 0, 0.3);
+  left: auto;
+  margin: 0;
+  bottom: auto;
+  top: 17px;
+  right: 17px;
+  text-indent: 9999px;
+  overflow: hidden;
+}
+
+.promotion-list-wrap .promotion-block .promotion-block-pic img {
+  display: block;
+  width: 100%;
+  height: auto;
+  opacity: 1;
+}
+
+.promotion-list-wrap .promotion-block .promotion-block-txt {
+  display: inline-block;
+  vertical-align: top;
+  width: 60%;
+  vertical-align: top;
+  text-align: left;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 50px 0 50px 0;
+  -webkit-border-radius: 50px 0 50px 0;
+  padding: 50px 160px;
+  z-index: 1;
+  min-height: 460px;
+  margin-right: -106px;
+}
+
+.promotion-list-wrap .promotion-block .promotion-block-txt h3 {
+  font-weight: normal;
+  font-size: 34px;
+  text-transform: uppercase;
+  line-height: 40px;
+  color: #fff;
+  margin-bottom: 30px;
+}
+
+.promotion-list-wrap .promotion-block .promotion-block-txt p {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  color: #fff;
+  line-height: 24px;
+  margin-bottom: 10px;
+  margin-bottom: 25px;
+}
+
+.promotion-list-wrap .promotion-block .l-social {
+  position: absolute;
+  top: 50%;
+  right: 26px;
+  margin-top: -56px;
+  z-index: 10;
+  text-align: center;
+}
+
+.promotion-list-wrap .promotion-block .l-social li {
+  display: block;
+  font-family: "MyriadLight";
+  font-weight: normal;
+  font-size: 14px;
+  color: #fff;
+  margin-bottom: 3px;
+}
+
+.promotion-list-wrap .promotion-block .l-social .l-facebook {
+  width: 44px;
+  height: 44px;
+  background: url(http://cinestar.com.vn/catalog/view/theme/default/images/scl_facebook.png) no-repeat center center;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  background-size: cover;
+  -webkit-background-size: cover;
+  text-indent: 9999px;
+  margin-bottom: 10px;
+  transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  -webkit-box-shadow: 3px 3px 0 #0000001a;
+          box-shadow: 3px 3px 0 #0000001a;
+  overflow: hidden;
+}
+
+.promotion-list-wrap .promotion-block .l-social .l-facebook:hover {
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+.promotion-list-wrap .promotion-block .l-social .l-google {
+  width: 44px;
+  height: 44px;
+  background: url(http://cinestar.com.vn/catalog/view/theme/default/images/scl_google.png) no-repeat center center;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  background-size: cover;
+  -webkit-background-size: cover;
+  text-indent: 9999px;
+  transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  -webkit-box-shadow: 3px 3px 0 #0000001a;
+          box-shadow: 3px 3px 0 #0000001a;
+  overflow: hidden;
+}
+
+.promotion-list-wrap .promotion-block .l-social .l-google:hover {
+  opacity: 0.5;
+  cursor: pointer;
+}
+/*# sourceMappingURL=UuDai.css.map */
