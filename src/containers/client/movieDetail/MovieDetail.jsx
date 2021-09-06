@@ -120,7 +120,7 @@ class MovieDetail extends Component {
            
             // console.log("data", data)
            setTimeout(() => {
-            this.props.fetchMovieDetail(data)
+            this.props.fetchMovieDetail(data.content)
            },1200)
             // neu co loi quang ra error
             throw new Error('error ne!')
