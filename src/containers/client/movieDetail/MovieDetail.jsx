@@ -9,8 +9,8 @@ class MovieDetail extends Component {
 
     render() {
         const { movieDetail, loading } = this.props;
-        // console.log("movieDetail", movieDetail)
-        if (loading) return <Loading/>
+        console.log("movieDetail", movieDetail)
+        if (loading) return <Loading />
         return (
             <div className="movieDetail">
                 <div className="movie_detail">
@@ -20,24 +20,24 @@ class MovieDetail extends Component {
                             <img className="" src={movieDetail.hinhAnh} alt="" />
                             <div className="movie_detail__header__left__trailer">
                                 <a href={movieDetail.trailer} target="_blank"
-                                className=""
+                                    className=""
                                 >Trailer</a>
                             </div>
                         </div>
-        
+
                         <div className=" movie_detail__header__right">
                             <h2 className="font-weight-bold">{movieDetail.tenPhim}</h2>
                             <div className="movie_detail__header__right__A row">
-                               
+
                                 <div className="col-4">
                                     <p>Ngay Khoi Chieu </p>
                                 </div>
                                 <div className="col-8">
-                                <span> {movieDetail.ngayKhoiChieu}</span>
+                                    <span> {movieDetail.ngayKhoiChieu}</span>
                                 </div>
                             </div>
                             <div className="movie_detail__header__right__B row">
-                               
+
                                 <div className="col-3">
                                     <p>Mo Ta </p>
                                 </div>
@@ -48,12 +48,13 @@ class MovieDetail extends Component {
                             <div className="movie_detail__header__right__C mt-3">
                                 <p>Danh Gia : {movieDetail.danhGia}/10 IMDB</p>
                             </div>
-                           
+
                         </div>
                     </div>
-                    <h1 className="mt-5">Show Time</h1>
+                    <h1 className="mt-5 font-italic">Rạp - Cụm Rạp - Lịch Chiếu</h1>
                     {/* navs pills bootstrap */}
-                    <div className="row">
+             <div className="container">
+             <div className="row">
                         <div className="col-xl-3 col-lg-3 col-md-3 col-sm-4 col-5">
                             <div className="nav flex-column nav-pills text-left" id="v-pills-tab" role="tablist" aria-orientation="vertical">
 
@@ -68,6 +69,7 @@ class MovieDetail extends Component {
                                 })}
                             </div>
                         </div>
+
                         <div className="col-xl-9 col-lg-9 col-md-9 col-sm-8 col-7">
                             <div className="tab-content" id="v-pills-tabContent">
 
@@ -82,9 +84,10 @@ class MovieDetail extends Component {
                                                     <div key={index}>
                                                         <div className="mt-2 text-left ">
                                                             {/* <img src={cumRap.hinhAnh} height={50} width={50} alt="" /> */}
-                                                            <h2 className="ml-2">{cumRap.tenCumRap}</h2>
+                                                            {/* <h2 className="ml-2">{cumRap.tenCumRap}</h2> */}
+                                                            <a className="btn btn-danger" data-toggle="collapse" href={`#${cumRap.maCumRap}`} role="button" aria-expanded="false" aria-controls="multiCollapseExample1">{cumRap.tenCumRap}</a>
                                                         </div>
-                                                        <div>
+                                                        <div class="collapse multi-collapse" id={`${cumRap.maCumRap}`}>
                                                             {cumRap.lichChieuPhim.map((lichChieu, index) => {
                                                                 return (
                                                                     <span key={index}>
@@ -107,6 +110,7 @@ class MovieDetail extends Component {
                         </div>
 
                     </div>
+             </div>
                 </div>
             </div>
         )
@@ -117,11 +121,11 @@ class MovieDetail extends Component {
         try {
             const { movieId } = this.props.match.params;
             const { data } = await movieApi.fetchMovieDetailApi(movieId);
-           
+
             // console.log("data", data)
-           setTimeout(() => {
-            this.props.fetchMovieDetail(data.content)
-           },1200)
+            setTimeout(() => {
+                this.props.fetchMovieDetail(data.content)
+            }, 1200)
             // neu co loi quang ra error
             throw new Error('error ne!')
         } catch (err) {

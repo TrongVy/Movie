@@ -27,7 +27,6 @@ class MovieList extends Component {
       centerPadding: "60px",
       slidesToShow: 4,
       speed: 500,
-      rows: 1,
       slidesPerRow: 1,
       initialSlide: 0,
       responsive: [
