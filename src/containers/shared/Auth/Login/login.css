@@ -1,11 +1,11 @@
 .pageLogin{
-    height:87vh;
+    height:100vh;
 }
 .login{
-    margin-top: 100px;
+
     height: 100%;
     align-content: center;
-    background-image: url('http://getwallpapers.com/wallpaper/full/a/5/d/544750.jpg');
+    background-image: url('https://www.techrepublic.com/a/hub/i/r/2021/02/05/2c503225-0fb7-447f-8f34-facda0dc4472/resize/1200x/cda20270e6cc67f471f748edf15cba0f/smash-3.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     }
@@ -17,6 +17,7 @@
     margin-bottom: auto;
     width: 400px;
     background-color: rgba(0,0,0,0.5) !important;
+    box-shadow: 10px 10px 5px 0px rgba(217, 243, 125, 0.75);
     }
     
     .social_icon span{
@@ -67,14 +68,14 @@
     }
     
     .login_btn{
-    color: black;
+    color: rgb(255, 255, 255);
     background-color: #e00d7a;
-   
+    transition: all 0.4s ease;
     }
     
     .login_btn:hover{
-    color: black;
-    background-color: white;
+    color: rgb(255, 255, 255);
+    background-color: rgb(0, 0, 0);
     }
     
     .links{

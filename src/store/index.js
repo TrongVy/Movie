@@ -1,19 +1,36 @@
-import { createStore, combineReducers,applyMiddleware } from "redux";
+import { createStore, combineReducers, applyMiddleware } from "redux";
 import movieListReducer from '../containers/client/home/module/reducer';
 import movieDetailReducer from '../containers/client/movieDetail/module/reducer';
-import quanLyNguoiDungReducer from '../containers/client/login/module/quanLiNguoiDungReducer'
-import movieDetailFilter from '../containers/client/home/filter/module/reducer'
+import movieDetailFilter from '../containers/client/home/filter/module/reducer';
+import authReducer from '../containers/shared/Auth/module/authReducer'
+//redux thunk
 import { composeWithDevTools } from 'redux-devtools-extension'
 import reduxThunk from 'redux-thunk'
+//redux persist dung de luu user login xuong localStorage
+import { persistStore, persistReducer } from 'redux-persist'
+import storage from 'redux-persist/lib/storage' // defaults to localStorage for web
+
 const rootReducer = combineReducers({
     movieListReducer,
     movieDetailReducer,
-    quanLyNguoiDungReducer,
-    movieDetailFilter
+    movieDetailFilter,
+    authReducer
 });
 
+const persistConfig = {
+    key: 'currentUser',
+    storage,
+    // lưu thông tin user login (currentUser ) trên reducer
+    whitelist: ['authReducer']
+}
+const persistedReducer = persistReducer(persistConfig, rootReducer)
+
+
+
 const store = createStore(
-    rootReducer,
+    // rootReducer,
+    persistedReducer,
     composeWithDevTools(applyMiddleware(reduxThunk))
 )
-export default store;
+const persistor = persistStore(store)
+export { store, persistor };

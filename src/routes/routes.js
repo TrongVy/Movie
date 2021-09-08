@@ -1,9 +1,7 @@
 import About from "containers/client/about/About";
 import Home from "containers/client/home/Home";
 import KhuyenMai from "containers/client/khuyenMai/KhuyenMai";
-import Login from "containers/client/login/Login";
 import MovieDetail from "containers/client/movieDetail/MovieDetail";
-import Register from "containers/client/register/Register";
 import Review from "containers/client/review/Review";
 import seatPlant from "containers/client/seatPlant/SeatPlant";
 import Theater from "containers/client/theater/Theater";
@@ -33,16 +31,6 @@ export const clientRoutes =[
         exact:false,
         path :"/review",
         component:Review
-    },
-    {
-        exact:false,
-        path :"/login",
-        component:Login
-    },
-    {
-        exact:false,
-        path :"/register",
-        component:Register
     },
     {
         exact:false,

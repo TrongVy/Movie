@@ -1,6 +1,7 @@
 .banner{
     height:60px;
     margin-top: 100px;
+    background-color: #fff;
    &__item{
         display: flex;
         justify-content: space-around;
@@ -49,12 +50,7 @@
         }
     }
 }
-.banner__bottom{
-    background-image: url(../../../../assets/images/bg-top.png);
-    height:100px;
-    width: 100%;
-    background-color: rgba(68, 0, 58,0.8);
-}
+
 @media (max-width:570px) {
     .banner__item__content{
         a{
