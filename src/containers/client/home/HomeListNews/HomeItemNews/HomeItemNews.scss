@@ -1,15 +1,84 @@
-.item__phim {
-  background-color: #e00d7a;
-  height: 13rem;
-  margin: 11px -4px;
-  border-radius: 30px;
-  transition: all .5s ease-in-out;
-  &:hover {
+.item__phim_main {
+  margin: 8px -11px;
+  .item__phim {
+    background-color: #e00d7a;
+    height: auto;
+    border-radius: 30px;
+    transition: all 0.5s ease-in-out;
+    padding: 12px;
+    @media screen and (max-width: 800px) {
+      height: auto;
+      flex-wrap: wrap;
+      width: 100%;
+      flex-direction: column-reverse;
+    }
+    @media screen and (max-width:480px) {
+      width: 27.5rem;
+    }
+    @media screen and (max-width:320px) {
+      width: 18rem;
+    }
+    &:hover {
       background-color: #f37520;
+    }
+    img {
+      width: 100%;
+      border-radius: 23px;
+      margin: 22px 0px;
+      @media screen and (max-width: 800px) {
+        height: 15rem;
+        width: 16.5rem;
+        margin: auto;
+      }
+      @media screen and (max-width: 600px) {
+        height: 15rem;
+        width: 10.7rem;
+      }
+      @media screen and (max-width: 480px) {
+        height: 25rem;
+        width: 24.2rem;
+      }
+      @media screen and (max-width: 320px) {
+        height: 25rem;
+        width: 14.7rem
+      }
+    }
+    .item__moTa {
+      overflow: auto;
+      height: 7rem;
+      @media screen and (max-width: 800px) {
+        height: 10rem;
+        width: 16rem;
+      }
+      @media screen and (max-width: 600px) {
+        height: 10rem;
+        width: 11rem;
+      }
+      @media screen and (max-width: 480px) {
+        height: 10rem;
+        width: 130%;
+      }
+    }
   }
-  img {
-    width: 100%;
-    border-radius: 23px;
-    margin: 22px 0px;
-  }
+}
+
+::-webkit-scrollbar {
+  width: 0.7rem;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: palevioletred;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: plum;
 }

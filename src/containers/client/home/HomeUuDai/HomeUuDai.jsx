@@ -3,8 +3,9 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import './HomeUuDai.scss'
-class CustomSlide extends Component {
 
+
+class CustomSlide extends Component {
   render() {
     const { img, ...props } = this.props;
     return (
@@ -16,7 +17,6 @@ class CustomSlide extends Component {
 }
 
 export default class HomeUuDai extends Component {
-
   render() {
     const settings = {
       dots: true,
@@ -27,34 +27,54 @@ export default class HomeUuDai extends Component {
       slidesToShow: 3,
       slidesToScroll: 4,
       arrows: false,
+      responsive: [
+        {
+          breakpoint: 769,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 2,
+            infinite: true,
+            dots: true
+          }
+        },
+        {
+          breakpoint: 481,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            infinite: true,
+            dots: false
+          }
+        },
+      ]
     };
     return (
-      <div className='container' style={{height:'18rem',paddingTop: '2rem' }}>
+      <div className='container home__uu_dai_main'>
         <h3 className='home__text_uu_dai'> <img src="./img-khuyenMai/icon-promotion.png"/> ƯU ĐÃI</h3>
-        <Slider style={{}} {...settings}>
+        <Slider style={{width:'100%'}} {...settings}>
           <CustomSlide
             img={
-              <img className='img__member img-fluid' style={{width: '90%'}}  src="./img-khuyenMai/c_monday.jpg" />
+              <img className='img__member img-fluid' src="./img-khuyenMai/c_monday.jpg" />
             }
           />
           <CustomSlide
             img={
-              <img className='img__member img-fluid' style={{width: '90%'}}  src="./img-khuyenMai/big-star.jpg" />
+              <img className='img__member img-fluid' src="./img-khuyenMai/big-star.jpg" />
             }
           />
           <CustomSlide
             img={
-              <img className='img__member img-fluid' style={{width: '90%'}}  src="./img-khuyenMai/c'member.jpg" />
+              <img className='img__member img-fluid' src="./img-khuyenMai/c'member.jpg" />
             }
           />
           <CustomSlide
             img={
-              <img className='img__member img-fluid' style={{width: '90%'}}  src="./img-khuyenMai/hssv.jpg" />
+              <img className='img__member img-fluid' src="./img-khuyenMai/hssv.jpg" />
             }
           />
           <CustomSlide
             img={
-              <img className='img__member img-fluid' style={{width: '90%'}}  src="./img-khuyenMai/c_ten.jpg" />
+              <img className='img__member img-fluid' src="./img-khuyenMai/c_ten.jpg" />
             }
           />
         </Slider>
