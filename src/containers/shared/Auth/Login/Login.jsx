@@ -1,6 +1,6 @@
 
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom'
+import { Link, Redirect } from 'react-router-dom'
 import './login.css'
 import { connect } from 'react-redux';
 import { actLogin } from '../module/action';
@@ -62,7 +62,7 @@ class Login extends Component {
     render() {
         if (this.props.loading) { return <p>loading...</p> };
         // console.log(this.props)
-        return (
+        return !this.props.currentUser ? (
             <div
                 onSubmit={this.handleSubmit}
                 className="pageLogin" >
@@ -110,7 +110,7 @@ class Login extends Component {
                                         <button type="submit" className="btn  login_btn mr-2" >Đăng Nhập</button>
                                         <Link to="register" type="button" className="btn  login_btn" >Đăng Ký</Link>
                                     </div>
-                                    <div className="form-group" style={{textAlign:"left"}}>
+                                    <div className="form-group" style={{ textAlign: "left" }}>
                                         <Link to="/" type="button"  >Trang Chủ</Link>
                                     </div>
                                 </div>
@@ -120,17 +120,18 @@ class Login extends Component {
                 </form>
 
             </div>
-        )
+        ) : (<Redirect to="/" />)
     }
 }
 
 const mapStateToProps = (state) => ({
     loading: state.authReducer.loading,
-    error: state.authReducer.error
+    error: state.authReducer.error,
+    currentUser: state.authReducer.currentUser
 })
 const mapDispatchToProps = (dispatch) => ({
-    login: (user,history) => {
-        dispatch(actLogin(user,history))
+    login: (user, history) => {
+        dispatch(actLogin(user, history))
     }
 })
 export default connect(mapStateToProps, mapDispatchToProps)(Login)

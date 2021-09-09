@@ -16,7 +16,7 @@ class Header extends Component {
                 <div className="header__content"></div>
                 <div className="nav row">
                     <div className="nav__logo col-4">
-                        <img className="img-fluid" src="./image/logo.png" alt="" />
+                        <img className="" src="./image/logo.png" alt="" />
                     </div>
 
                     <nav className="nav_pc col-8">
