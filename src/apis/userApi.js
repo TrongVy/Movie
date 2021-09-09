@@ -5,6 +5,10 @@ const userApi = {
         //user: tai Khoan,mat khau
         return callApi(`QuanLyNguoiDung/DangNhap`, "POST", user)
     },
+    registerApi(user) {
+        //user: tai Khoan,mat khau
+        return callApi(`QuanLyNguoiDung/DangKy`, "POST", user)
+    },
     addUserApi(user, token) {
         return callApi(`QuanLyNguoiDung/ThemNguoiDung`, "POST", user, token)
     },

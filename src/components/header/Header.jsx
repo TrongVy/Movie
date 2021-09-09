@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Link,withRouter } from 'react-router-dom'
+import { Link, withRouter } from 'react-router-dom'
 import { connect } from 'react-redux'
 // import './header.scss'
 import './navbar.scss'
@@ -7,6 +7,8 @@ import { actLogout } from 'containers/shared/Auth/module/action'
 class Header extends Component {
     handleLogOut = () => {
         this.props.logOut();
+        // sau khi click vào logout quay trở về trang Chủ
+        // this.props.history.push('/') lấy từ withRouter
         this.props.history.push('/')
     }
     render() {

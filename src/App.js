@@ -9,6 +9,7 @@ import { adminRoutes, clientRoutes } from 'routes/routes';
 import ClientLayout from 'layouts/clientLayout';
 import Login from 'containers/shared/Auth/Login/Login';
 import AdminLayout from 'layouts/AdminLayout';
+import Register from 'containers/shared/Auth/Register/Register';
 
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
           {renderLayout(clientRoutes, ClientLayout)}
           {renderLayout(adminRoutes, AdminLayout)}
           <Route path="/login" component={Login} />
+          <Route path="/register" component={Register} />
           <Route path="*" component={PageNotFound} />
 
 

@@ -1,0 +1,38 @@
+.register{
+    background-image: url('https://www.techrepublic.com/a/hub/i/r/2021/02/05/2c503225-0fb7-447f-8f34-facda0dc4472/resize/1200x/cda20270e6cc67f471f748edf15cba0f/smash-3.jpg');
+    height:100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    display: flex;
+    &__content{
+        width: 50%;
+        height: 50%;
+        margin:auto;
+        form{
+            font-style: italic;
+            h2{
+                color:aqua;
+            }
+            padding:30px 20px;
+            background: rgba(0, 0, 0,0.4);
+            box-shadow: -8px 11px 5px 0px rgba(0,0,0,0.75);
+        }
+    }
+
+}
+@media (max-width: 920px) {
+    .register{
+
+        &__content{
+            width: 100%;
+            height: 50%;
+            margin:auto;
+            form{
+                padding:30px 20px;
+                background: rgba(0, 0, 0,0.3);
+            }
+        }
+    
+    }
+}

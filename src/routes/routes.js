@@ -3,6 +3,7 @@ import Home from "containers/client/home/Home";
 import KhuyenMai from "containers/client/khuyenMai/KhuyenMai";
 import MovieDetail from "containers/client/movieDetail/MovieDetail";
 import seatPlant from "containers/client/seatPlant/SeatPlant";
+import Register from "containers/shared/Auth/Register/Register";
 
 export const clientRoutes = [
     {
