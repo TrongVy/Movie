@@ -1,0 +1,113 @@
+$orange: #f37520;
+
+.bottom {
+  position: relative;
+  width: 100%;
+  min-height: 480px;
+  padding-top: 46px;
+  background: url(../../../assets/img/img-khuyenMai/line-bg.png) repeat-x left top;
+  background-size: contain;
+  -webkit-background-size: contain;
+  .bottom-nav {
+    display: block;
+    width: 100%;
+    margin: 0 auto;
+    max-width: 1200px;
+    overflow: hidden;
+    margin-bottom: 45px;
+    text-align: center;
+    .bottom-wrap {
+      display: inline-block;
+      vertical-align: top;
+      width: auto;
+      text-align: right;
+      padding-top: 40px;
+      div {
+        display: inline-block;
+        margin: 0 20px;
+        vertical-align: top;
+        text-align: center;
+        h2 {
+          padding: 8px 19px;
+          font-family: "avantgarde-demi";
+          font-weight: normal;
+          font-size: 20px;
+          text-transform: uppercase;
+          color: #fff;
+          background-color: rgba(255, 255, 255, 0.1);
+          line-height: 26px;
+          text-align: center;
+          margin-bottom: 10px;
+          display: inline-block;
+        }
+        ul {
+          width: auto;
+          max-width: 344px;
+          padding: 0;
+          li {
+            margin-bottom: 10px;
+            list-style: none;
+            a {
+              text-decoration: none;
+              transition: all 0.5s ease;
+              color: white;
+              &:hover {
+                color: $orange;
+              }
+              .facebook {
+                background-image: url(../../../assets/img/img-khuyenMai/scl_facebook.png);
+              }
+            }
+          }
+        }
+      }
+    }
+    .social {
+      ul {
+        li {
+          display: inline-block;
+        }
+      }
+      .hotline-tel {
+        display: block;
+        font-family: "avantgarde";
+        font-weight: normal;
+        font-size: 30px;
+        color: #fff;
+        white-space: nowrap;
+        transition: all 0.3s ease-in-out;
+        -webkit-transition: all 0.3s ease-in-out;
+        &:hover {
+          color: $orange;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+  .bottom-nav-icon {
+    display: block;
+    width: 90%;
+    margin: 0 auto;
+    max-width: 1200px;
+    text-align: center;
+    ul {
+      position: relative;
+      width: auto;
+      li {
+        display: inline-block;
+        vertical-align: middle;
+        margin: 0 10px;
+        a {
+          display: block;
+          line-height: 0;
+          font-size: 0;
+          transition: all 0.3s ease-in-out;
+          -webkit-transition: all 0.3s ease-in-out;
+          &:hover {
+            opacity: 0.5;
+          }
+        }
+      }
+    }
+  }
+}

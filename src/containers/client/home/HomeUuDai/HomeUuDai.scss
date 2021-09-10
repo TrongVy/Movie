@@ -1,49 +1,82 @@
 .slick-dots {
-    top: 215px;
-    li {
-      button {
-        &:before {
-          font-size: 1rem;
-          color: pink !important;
-          transition: all .3s;
+  top: 215px;
+  li {
+    button {
+      &:before {
+        font-size: 1rem;
+        color: pink !important;
+        transition: all 0.3s;
+        @media screen and(max-width: 768px) {
+          font-size: 10px;
         }
-      }
-    }
-    .slick-active {
-      button {
-        &:before {
-          color: white !important;
-          border: 2px solid white !important;
-          border-radius: 100%;
-          width: 1.5rem;
-          height: 1.5rem;
-          text-align: center;
-          line-height: 1.3rem;
+        @media screen and(max-width: 480px) {
+          top: 0px;
         }
       }
     }
   }
+  .slick-active {
+    button {
+      &:before {
+        color: white !important;
+        border: 2px solid white !important;
+        border-radius: 100%;
+        width: 1.5rem;
+        height: 1.5rem;
+        text-align: center;
+        line-height: 1.3rem;
+        @media screen and (max-width: 768px) {
+          width: 21px;
+          height: 22px;
+        }
+      }
+    }
+  }
+}
+.home__uu_dai_main {
+  height: 18rem;
+  padding-top: 2rem;
+  margin-top: 7rem;
   .home__text_uu_dai {
-      color:white; 
-      font-weight: revert;
-      float: left;
-      transform: rotate(270deg);
-      position: relative;
-      right: -8rem;
-      top: 3rem;
-      img {
-        position: absolute;
-        left: -91px;
-        top: -59px;
-      }
+  color: white;
+  font-weight: revert;
+  transform: rotate(270deg);
+  position: absolute;
+  left: 2.5rem;
+  top: 76rem;
+  align-items: flex-end;
+  display: flex;
+  @media screen and (max-width: 1024px) {
+    transform: rotateX(45deg);
+    top: 72rem;
   }
-  .home__uu_dai_bg_img {
-    width: 97%;
-    background-color: white;
-    height: 13rem;
-    padding-top: 0.4rem;
-    border-radius: 30px 0 30px 0;
-    box-shadow: 7px 7px 0 #00000033;
-    border: solid 4px #2c0d0dd4;
+  @media screen and (max-width: 800px) {
+    transform: rotateX(45deg);
+    top: 70rem;
   }
-  
+  @media screen and (max-width: 768px) {
+    transform: rotateX(45deg);
+    top: 69rem;
+  }
+  img {
+    display: block;
+  }
+}
+}
+
+.home__uu_dai_bg_img {
+  width: 97%;
+  background-color: white;
+  height: 13rem;
+  padding-top: 0.4rem;
+  border-radius: 30px 0 30px 0;
+  box-shadow: 7px 7px 0 #00000033;
+  border: solid 4px #2c0d0dd4;
+}
+
+.img__member {
+  width: 95%;
+  height: 11.5rem;
+  margin: 1.5px 7px;
+  border-radius: 30px 0 30px 0;
+}

@@ -1,15 +1,83 @@
+$colorBgArrow: #79013f;
+$linkUrlIconStar: url(../../../../assets/img/img-khuyenMai/icon-start.png);
+
 .img__member {
   border: 3px solid #71336a;
   border-radius: 26px;
   box-shadow: 10px 10px 0px #0000004d;
   width: 90%;
+  transition: all .4s;
+  cursor: pointer;
+  &:hover {
+    opacity: .7;
+    .active-member {
+      display: block;
+      width: 11rem;
+      margin-left: 13rem;
+    }
+  }
+}
+.slick-next {
+  background: $linkUrlIconStar center $colorBgArrow;
+  border-radius: 100%;
+  width: 60px;
+  height: 60px;
+  border: solid 2px white;
+  transition: all 300ms;
+  position: absolute;
+  right: -50px;
+  top: 10rem;
+  &::before {
+    content: none;
+  }
+  &:hover {
+    background: $linkUrlIconStar center $colorBgArrow;
+    box-shadow: 0 0 20px #ffffffcc;
+  }
+  @media screen and (max-width: 1024px) {
+    top: 5rem;
+  }
+}
+
+.slick-prev {
+  background: $linkUrlIconStar center $colorBgArrow;
+  border-radius: 100%;
+  width: 60px;
+  height: 60px;
+  border: solid 2px white;
+  transition: all 300ms;
+  position: absolute;
+  left: -50px;
+  top: 10rem;
+  &::before {
+    content: none;
+  }
+  &:hover {
+    background: $linkUrlIconStar center $colorBgArrow;
+    box-shadow: 0 0 20px #ffffffcc;
+  }
+  @media screen and (max-width: 1024px) {
+    top: 5rem;
+  }
 }
 .slick-list {
-  width: 76rem;
-  margin: auto;
-  position: relative;
-  left: 0.5rem;
-  height: 28rem;
+    margin: auto;
+    position: relative;
+    left: 0.5rem;
+    height: 28rem;
+    width: 85%;
+  @media screen and (max-width: 1024px) {
+    width: 80%;
+    height: 16rem;
+  }
+  @media screen and (max-width: 768px) {
+    width: 90%;
+    height: 14rem;
+  }
+  @media screen and (max-width: 480px) {
+    width: 70%;
+    height: 14rem;
+  }
   img {
     display: inline;
   }

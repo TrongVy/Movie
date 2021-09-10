@@ -1,15 +1,18 @@
 import React, { Component } from "react";
 import "./HomeItemNews.scss";
 export default class HomeItemNews extends Component {
+
   render() {
-    const { hinhAnh, moTa, hot, tenPhim } = this.props.movie;
+    const { hinhAnh, hot, tenPhim, moTa } = this.props.movie;
     return (
       hot && (
-        <div className="col-6">
+        <div className="col-6 item__phim_main">
           <div className="row d-flex item__phim">
             <div className="col-9">
               <h5>{tenPhim}</h5>
-              <p style={{overflow:'hidden',height:'10.9rem'}}>{moTa}</p>
+              <p className='item__moTa'>
+                {moTa}
+              </p>
             </div>
             <div className="col-3">
               <img src={hinhAnh} />

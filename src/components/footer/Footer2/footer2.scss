@@ -1,0 +1,60 @@
+.footer {
+  position: relative;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  .payment {
+    position: relative;
+    width: 100%;
+    height: auto;
+    padding: 15px 20px;
+    h2 {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 14px;
+      color: #b3c4d5;
+      text-align: center;
+      margin-bottom: 12px;
+    }
+    ul {
+      position: relative;
+      width: 100%;
+      height: auto;
+      text-align: center;
+      li {
+        display: inline-block;
+        margin: 0 2px 4px 2px;
+        vertical-align: middle;
+        a {
+          display: block;
+          line-height: 0;
+          font-family: none;
+          font-size: 0;
+          transition: all 0.3s ease-in-out;
+          -webkit-transition: all 0.3s ease-in-out;
+        }
+      }
+    }
+  }
+  .copyright {
+    position: relative;
+    width: 100%;
+    height: auto;
+    padding: 24px 20px;
+    background: #000;
+    p {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 12px;
+      text-transform: uppercase;
+      color: #919191;
+      text-align: center;
+      line-height: 14px;
+      a {
+        font-family: Arial, Helvetica, sans-serif;
+        color: #919191;
+        transition: all 0.3s ease-in-out;
+        -webkit-transition: all 0.3s ease-in-out;
+        white-space: nowrap;
+      }
+    }
+  }
+}
