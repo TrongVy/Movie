@@ -8,7 +8,7 @@ import './App.css';
 import { adminRoutes, clientRoutes } from 'routes/routes';
 import ClientLayout from 'layouts/clientLayout';
 import Login from 'containers/shared/Auth/Login/Login';
-import AdminLayout from 'layouts/AdminLayout';
+import AdminLayout from 'layouts/adminLayout';
 
 
 function App() {
