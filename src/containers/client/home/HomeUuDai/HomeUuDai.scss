@@ -36,7 +36,6 @@
 .home__uu_dai_main {
   height: 18rem;
   padding-top: 2rem;
-  display: flex;
   margin-top: 7rem;
   .home__text_uu_dai {
   color: white;
@@ -44,7 +43,7 @@
   transform: rotate(270deg);
   position: absolute;
   left: 2.5rem;
-  top: 79rem;
+  top: 76rem;
   align-items: flex-end;
   display: flex;
   @media screen and (max-width: 1024px) {

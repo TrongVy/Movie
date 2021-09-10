@@ -49,7 +49,7 @@ export default class HomeUuDai extends Component {
       ]
     };
     return (
-      <div className='container' style={{height:'18rem',paddingTop: '2rem' }}>
+      <div className='container home__uu_dai_main'>
         <h3 className='home__text_uu_dai'> <img src="./img-khuyenMai/icon-promotion.png" alt=""/> ƯU ĐÃI</h3>
         <Slider style={{}} {...settings}>
           <CustomSlide
