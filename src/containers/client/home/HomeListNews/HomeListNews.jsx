@@ -24,7 +24,7 @@ class HomeListNews extends Component {
     return (
       <div className="container text-light text-left mt-5">
         <h3 className='text-center mb-5'>PHIM ĐANG HOT</h3>
-        <div className="row">
+        <div className="row justify-content-center">
           {listMovie.map((movie,index) => {
             return <HomeItemNews movie={movie} key={index}/>
           })}
