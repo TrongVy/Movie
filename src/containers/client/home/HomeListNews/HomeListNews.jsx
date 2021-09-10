@@ -19,16 +19,16 @@ class HomeListNews extends Component {
   };
 
   render() {
-    const { listMovie} = this.props
-    // console.log(this.props)
+    const { listMovie } = this.props;
+    console.log(listMovie)
     return (
       <div className="container text-light text-left mt-5">
-        <h3 className='text-center mb-5'>PHIM ĐANG HOT</h3>
+        <h3 className="text-center mb-5">PHIM ĐANG HOT</h3>
         <div className="row justify-content-center">
-          {listMovie.map((movie,index) => {
-            return <HomeItemNews movie={movie} key={index}/>
+          {this.genderItem().map((movie, index) => {
+            return <HomeItemNews movie={movie} key={index} />;
           })}
-          <button className='btn btn-danger' onClick={this.toggle}>
+          <button className="btn btn-danger" onClick={this.toggle}>
             {this.state.isOpen ? "Thu lại" : "Xem thêm"}
           </button>
         </div>
