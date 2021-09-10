@@ -1,15 +1,22 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
+import { Link,withRouter } from 'react-router-dom'
+import { connect } from 'react-redux'
 // import './header.scss'
 import './navbar.scss'
-export default class Header extends Component {
+import { actLogout } from 'containers/shared/Auth/module/action'
+class Header extends Component {
+    handleLogOut = () => {
+        this.props.logOut();
+        this.props.history.push('/')
+    }
     render() {
+        console.log(this.props.currentUser)
         return (
             <header className="header">
                 <div className="header__content"></div>
                 <div className="nav row">
                     <div className="nav__logo col-4">
-                        <img className="img-fluid" src="./image/logo.png" alt="" />
+                        <img className="" src="./image/logo.png" alt="" />
                     </div>
 
                     <nav className="nav_pc col-8">
@@ -29,23 +36,24 @@ export default class Header extends Component {
                                 <ul>
 
                                     <li>
-                                        <Link to="/">home</Link>
+                                        <Link to="/">Home</Link>
                                     </li>
                                     <li>
                                         <Link to="/khuyenmai">Khuyến Mãi</Link>
                                     </li>
                                     <li>
-                                        <Link to="/theater">theater</Link>
+                                        <Link to="/contact">Contact</Link>
                                     </li>
-                                    <li>
-                                        <Link to="/about">about</Link>
-                                    </li>
-                                    <li>
-                                        <Link to="/contact">contact</Link>
-                                    </li>
-                                    <li>
-                                        <Link to="/login">login</Link>
-                                    </li>
+                                    {this.props.currentUser ?
+                                        (<li>
+                                            <Link className="nav_mobile__list__link"
+                                                onClick={() => this.handleLogOut()}
+                                            >Logout</Link>
+                                        </li>) :
+                                        (<li>
+                                            <Link to="/login" className="nav_mobile__list__link">Login</Link>
+                                        </li>)
+                                    }
                                 </ul>
                             </div>
                         </div>
@@ -69,14 +77,19 @@ export default class Header extends Component {
                                 <Link to="/theater" className="nav_mobile__list__link">theater</Link>
                             </li>
                             <li>
-                                <Link to="/about" className="nav_mobile__list__link">about</Link>
-                            </li>
-                            <li>
                                 <Link to="/contact" className="nav_mobile__list__link">contact</Link>
                             </li>
-                            <li>
-                                <Link to="/login" className="nav_mobile__list__link">login</Link>
-                            </li>
+
+                            {this.props.currentUser ?
+                                (<li>
+                                    <Link className="nav_mobile__list__link"
+                                        onClick={() => this.handleLogOut()}
+                                    >LogOut</Link>
+                                </li>) :
+                                (<li>
+                                    <Link to="/login" className="nav_mobile__list__link">LogIn</Link>
+                                </li>)
+                            }
                         </ul>
                     </nav>
                 </div>
@@ -84,3 +97,13 @@ export default class Header extends Component {
         )
     }
 }
+const mapStateToProps = (state) => ({
+    currentUser: state.authReducer.currentUser,
+})
+const mapDispatchToProps = (dispatch) => ({
+    logOut: () => {
+        dispatch(actLogout())
+    }
+})
+//withRouter dung de lay props cua router
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Header))

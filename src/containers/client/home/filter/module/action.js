@@ -19,7 +19,7 @@ export const actFetchMovieDetailFilter = (movieId) => {
         movieApi.fetchMovieDetailApi(movieId)
             .then(res => {
                 // console.log("data",res.data)
-                dispatch(actFetchMovieDetailSuccess(res.data))
+                dispatch(actFetchMovieDetailSuccess(res.data.content))
             })
             .catch(err => {
                 actFetchMovieDetailFalse(err);

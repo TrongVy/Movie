@@ -1,5 +1,3 @@
-
-import Header from 'components/header/Header';
 import PageNotFound from 'containers/shared/pageNotFound/PageNotFound';
 import {
   BrowserRouter as Router,
@@ -7,15 +5,18 @@ import {
   Route,
 } from "react-router-dom";
 import './App.css';
-import { clientRoutes } from 'routes/routes';
+import { adminRoutes, clientRoutes } from 'routes/routes';
+import ClientLayout from 'layouts/clientLayout';
+import Login from 'containers/shared/Auth/Login/Login';
+import AdminLayout from 'layouts/adminLayout';
 
 
 function App() {
- const  renderRoute = (routes) => {
+  const renderLayout = (routes, Layout) => {
     return routes.map((route, index) => {
-      const { exact, path, component } = route;
+      const { exact, path, component, isPrivate } = route;
       return (
-        <Route key={index} exact={exact} path={path} component={component} />
+        <Layout key={index} exact={exact} path={path} component={component} isPrivate={isPrivate} />
       )
     })
   }
@@ -23,10 +24,13 @@ function App() {
     <div className="App">
 
       <Router>
-        <Header />
         <Switch>
-          {renderRoute(clientRoutes)}
+          {renderLayout(clientRoutes, ClientLayout)}
+          {renderLayout(adminRoutes, AdminLayout)}
+          <Route path="/login" component={Login} />
           <Route path="*" component={PageNotFound} />
+
+
         </Switch>
       </Router>
 

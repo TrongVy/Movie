@@ -1,57 +1,52 @@
-import About from "containers/client/about/About";
+import Dashboard from "containers/admin/Dashboard/Dashboard";
 import Home from "containers/client/home/Home";
 import KhuyenMai from "containers/client/khuyenMai/KhuyenMai";
-import Login from "containers/client/login/Login";
 import MovieDetail from "containers/client/movieDetail/MovieDetail";
-import Register from "containers/client/register/Register";
-import Review from "containers/client/review/Review";
 import seatPlant from "containers/client/seatPlant/SeatPlant";
-import Theater from "containers/client/theater/Theater";
 
-export const clientRoutes =[
+export const clientRoutes = [
     {
-        exact:true,
-        path :"/",
-        component:Home
+        exact: true,
+        path: "/",
+        component: Home,
+        isPrivate: false,
     },
     {
-        exact:true,
-        path :"/khuyenmai",
-        component:KhuyenMai
+        exact: true,
+        path: "/khuyenmai",
+        component: KhuyenMai,
+        isPrivate: false,
     },
     {
-        exact:false,
-        path :"/theater",
-        component:Theater
+        exact: false,
+        path: "/movie-detail/:movieId",
+        component: MovieDetail,
     },
     {
-        exact:false,
-        path :"/about",
-        component:About
+        exact: false,
+        path: "/seat-plan/:showtimeId",
+        component: seatPlant,
+        isPrivate: true,
     },
+]
+export const adminRoutes = [
     {
-        exact:false,
-        path :"/review",
-        component:Review
+        exact: true,
+        path: "/admin",
+        component: Dashboard,
+        isPrivate: true,
     },
-    {
-        exact:false,
-        path :"/login",
-        component:Login
-    },
-    {
-        exact:false,
-        path :"/register",
-        component:Register
-    },
-    {
-        exact:false,
-        path :"/movie-detail/:movieId",
-        component:MovieDetail
-    },
-    {
-        exact:false,
-        path :"/seat-plan/:showtimeId",
-        component:seatPlant
-    },
+    // {
+    //     exact: false,
+    //     path: "/admin/movie",
+    //     component: Movie,
+    //     isPrivate: true,
+    // },
+    // {
+    //     exact: false,
+    //     path: "/admin/user",
+    //     component: User,
+    //     isPrivate: true,
+    // },
+
 ]

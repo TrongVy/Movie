@@ -49,12 +49,12 @@ export default class HomeUuDai extends Component {
       ]
     };
     return (
-      <div className='container home__uu_dai_main'>
-        <h3 className='home__text_uu_dai'> <img src="./img-khuyenMai/icon-promotion.png"/> ƯU ĐÃI</h3>
-        <Slider style={{width:'100%'}} {...settings}>
+      <div className='container' style={{height:'18rem',paddingTop: '2rem' }}>
+        <h3 className='home__text_uu_dai'> <img src="./img-khuyenMai/icon-promotion.png" alt=""/> ƯU ĐÃI</h3>
+        <Slider style={{}} {...settings}>
           <CustomSlide
             img={
-              <img className='img__member img-fluid' src="./img-khuyenMai/c_monday.jpg" />
+              <img className='img__member img-fluid' style={{width: '90%'}}  src="./img-khuyenMai/c_monday.jpg" alt="" />
             }
           />
           <CustomSlide
