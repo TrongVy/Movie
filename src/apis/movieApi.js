@@ -15,6 +15,15 @@ const movieApi = {
     // dat ve
     datVeApi(thongTinDatVe, token) {
         return callApi("QuanLyDatVe/DatVe", "POST", thongTinDatVe, token)
-    }
+    },
+    postMovies(formDate) {
+        return callApi(`QuanLyPhim/ThemPhimUploadHinh`, "POST", formDate)
+    },
+    upDateMovie(formData) {
+        return callApi(`QuanLyPhim/CapNhatPhimUpload`, "POST", formData)
+    },
+    layThongTinPhim(maPhim) {
+        return callApi(`QuanLyPhim/LayThongTinPhim?MaPhim=${maPhim}`)
+    } 
 }
 export default movieApi;
