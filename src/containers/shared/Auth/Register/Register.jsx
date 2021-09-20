@@ -1,19 +1,22 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import userApi from 'apis/userApi';
 import './register.scss'
+
+// lỗi api lúc đăng kí mã nhóm GP01 nhưng đăng kí thành công thì thông tin được lưu trử bên nhóm GP00
+
 export default function Register(props) {
     const [user, setUser] = useState({
         values: {
             taiKhoan: "",
-            soDT: "",
+            soDt: "",
             email: "",
             matKhau: "",
-            maNhom: "",
+            maNhom: "GP01",
             hoTen: ""
         },
         errors: {
             taiKhoan: "",
-            soDT: "",
+            soDt: "",
             email: "",
             matKhau: "",
             maNhom: "",
@@ -23,7 +26,9 @@ export default function Register(props) {
         isValidPassword: false,
         isValidNumber: false,
         isValidString: false,
-        isValidForm: false
+        isValidForm: false,
+        isValidTaiKhoan: false,
+        danhSachNguoiDung: []
     });
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -40,14 +45,27 @@ export default function Register(props) {
     const handleErrors = (e) => {
         const { name, value } = e.target;
         let errorsMessage = "";
-        let { isValidEmail, isValidPassword, isValidNumber, isValidString } = user;
+        let { isValidTaiKhoan, isValidEmail, isValidPassword, isValidNumber, isValidString } = user;
         if (value === "") {
             errorsMessage = `${name} Không Được Để Trống!`
         }
         switch (name) {
+            case "taiKhoan": {
+                // kiểm tra xem tài khoản này đã có người nào sử dụng chưa
+                let index = user.danhSachNguoiDung.findIndex((user) => user.taiKhoan === value);
+                if (index !== -1) {
+                    errorsMessage = "tài khoản đã có người đăng kí"
+                }
+                isValidTaiKhoan = errorsMessage === "" ? true : false;
+                break;
+            }
             case "email": {
                 const rexgex = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
                 // neu value email ton tai va value email ko thoa dieu kien
+                let indexEmail = user.danhSachNguoiDung.findIndex((user) => user.email === value);
+                if (indexEmail !== -1) {
+                    errorsMessage = 'Email Đã Có Người Đăng Kí';
+                }
                 if (value && !value.match(rexgex)) {
                     errorsMessage = 'invalid email';
                 }
@@ -61,6 +79,14 @@ export default function Register(props) {
                 isValidPassword = errorsMessage === "" ? true : false;
                 break;
             }
+            case "soDt": {
+                const reg = /^\d+$/;
+                if (value && !value.match(reg)) {
+                    errorsMessage = 'enter number';
+                }
+                isValidNumber = errorsMessage === "" ? true : false;
+                break;
+            }
             case "hoTen": {
                 const regexName = /^[a-zA-Z ]{2,}$/g;
                 if (value && !regexName.test(value)) {
@@ -69,14 +95,7 @@ export default function Register(props) {
                 isValidString = errorsMessage === "" ? true : false;
                 break;
             }
-            case "soDT": {
-                const reg = /^\d+$/;
-                if (value && !value.match(reg)) {
-                    errorsMessage = 'enter number';
-                }
-                isValidNumber = errorsMessage === "" ? true : false;
-                break;
-            }
+
 
             default:
                 break;
@@ -87,17 +106,18 @@ export default function Register(props) {
                 ...user.errors,
                 [name]: errorsMessage
             },
+            isValidTaiKhoan,
             isValidEmail,
             isValidPassword,
             isValidNumber,
             isValidString,
-            isValidForm: isValidEmail && isValidNumber && isValidPassword && isValidString
+            isValidForm: isValidTaiKhoan && isValidEmail && isValidNumber && isValidPassword && isValidString
         })
     }
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        // console.log("values : ", user.isValidForm);
+        console.log("values : ", user.values);
         // post api add user
         if (user.isValidForm) {
             userApi.registerApi(user.values)
@@ -114,74 +134,93 @@ export default function Register(props) {
                 })
         }
     }
+    useEffect(() => {
+        userApi.getAllUsersApi()
+            .then((res) => {
+                setUser({
+                    ...user,
+                    danhSachNguoiDung: res.data.content
+                })
+            })
+            .catch((err) => {
+                console.log("err", err)
+            })
+    }, [])
     return (
         <div className=" register ">
-            <div className="container register__content">
+            <div className="container register__content ">
                 <form onSubmit={handleSubmit} >
                     <h2>Đăng Ký Thành Viên</h2>
                     <div className="row">
                         <div className="form-group col-6">
-                            <input type="text" className="form-control" placeholder="Tai Khoan (khong duoc trung)" alt=""
+                            <p className="text-light">Tài Khoản</p>
+                            <input type="text" className="form-control" placeholder="Tải Khoản" alt=""
                                 name="taiKhoan"
                                 onChange={handleChange}
                                 onBlur={handleErrors}
                                 onKeyUp={handleErrors}
                             />
-                            <p className="text-light">{user.errors.taiKhoan}</p>
+                            <p className=" font-weight-bold" style={{ color: "#9b0909" }}>{user.errors.taiKhoan}</p>
 
                         </div>
                         <div className="form-group col-6">
-                            <input type="password" className="form-control" placeholder="Mat Khau" alt=""
+                            <p className="text-light">Mật Khẩu</p>
+                            <input type="password" className="form-control" placeholder="Mật Khẩu" alt=""
                                 name="matKhau"
                                 onChange={handleChange}
                                 onBlur={handleErrors}
                                 onKeyUp={handleErrors}
                             />
-                            <p className="text-light">{user.errors.matKhau}</p>
+                            <p className=" font-weight-bold" style={{ color: "#9b0909" }}>{user.errors.matKhau}</p>
                         </div>
 
                     </div>
 
                     <div className="row">
                         <div className="form-group col-6">
-                            <input type="email" className="form-control" placeholder="Email (khong duoc trung)" alt=""
+                            <p className="text-light">Email</p>
+                            <input type="email" className="form-control" placeholder="Email (chỉ đăng kí được 1 lần)" alt=""
                                 name="email"
                                 onChange={handleChange}
                                 onBlur={handleErrors}
                                 onKeyUp={handleErrors}
                             />
-                            <p className="text-light">{user.errors.email}</p>
+                            <p className=" font-weight-bold" style={{ color: "#9b0909" }}>{user.errors.email}</p>
                         </div>
                         <div className="form-group col-6">
-                            <input type="text" className="form-control" placeholder="So Dien Thoai" alt=""
-                                name="soDT"
+                            <p className="text-light">Số Điện Thoại</p>
+                            <input type="text" className="form-control" placeholder="Số Điện Thoại" alt=""
+                                name="soDt"
                                 onChange={handleChange}
                                 onBlur={handleErrors}
                                 onKeyUp={handleErrors}
                             />
-                            <p className="text-light">{user.errors.soDT}</p>
+                            <p className=" font-weight-bold" style={{ color: "#9b0909" }}>{user.errors.soDt}</p>
                         </div>
                     </div>
 
                     <div className="row">
 
-                        <div className="form-group col-6">
+                        <div className="form-group col-6" style={{ display: "none" }}>
+                            <p className="text-light">Mã Nhóm (không cần nhập)</p>
                             <input type="text" className="form-control" placeholder="Ma Nhom (GP...)" alt=""
                                 name="maNhom"
                                 onChange={handleChange}
                                 onBlur={handleErrors}
                                 onKeyUp={handleErrors}
+                                value="GP01"
                             />
-                            <p className="text-light">{user.errors.maNhom}</p>
+                            <p className=" font-weight-bold" style={{ color: "#9b0909" }}>{user.errors.maNhom}</p>
                         </div>
-                        <div className="form-group col-6">
-                            <input type="text" className="form-control" placeholder="hoTen" alt=""
+                        <div className="form-group col-12">
+                            <p className="text-light">Họ Tên</p>
+                            <input type="text" className="form-control" placeholder="Họ Tên (viết không dấu)" alt=""
                                 name="hoTen"
                                 onChange={handleChange}
                                 onBlur={handleErrors}
                                 onKeyUp={handleErrors}
                             />
-                            <p className="text-light">{user.errors.hoTen}</p>
+                            <p className=" font-weight-bold" style={{ color: "#9b0909" }}>{user.errors.hoTen}</p>
                         </div>
                     </div>
 
@@ -194,4 +233,5 @@ export default function Register(props) {
             </div>
         </div>
     )
+
 }

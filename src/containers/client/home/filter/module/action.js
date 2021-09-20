@@ -9,7 +9,7 @@ const actFetchMovieDetailSuccess = (movieDetail) => ({
     payload: movieDetail
 });
 const actFetchMovieDetailFalse = (err) => ({
-    type:Fetch_All_Movie_Detail_False,
+    type: Fetch_All_Movie_Detail_False,
     payload: err
 });
 
@@ -18,7 +18,6 @@ export const actFetchMovieDetailFilter = (movieId) => {
         dispatch(actFetchMovieDetailRequest());
         movieApi.fetchMovieDetailApi(movieId)
             .then(res => {
-                // console.log("data",res.data)
                 dispatch(actFetchMovieDetailSuccess(res.data.content))
             })
             .catch(err => {

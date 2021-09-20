@@ -23,12 +23,12 @@ export default class MovieItem extends Component {
                         href={movie.trailer}
                         target="_blank"
                         >TraiLer</a>
-                        <button
+                        {/* <button
                          className="
                          movie_item__detail__btn 
                          movie_item__detail__bottom__btn
                          movie_item__detail__bottom__btn__buy
-                         ">Mua Ve</button>
+                         ">Mua Ve</button> */}
                     </div>
                 </div>
                 {/* video 38 phut 19 hinh loi ? */}

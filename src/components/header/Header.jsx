@@ -12,13 +12,14 @@ class Header extends Component {
         this.props.history.push('/')
     }
     render() {
-        console.log(this.props.currentUser)
+        // console.log(this.props.currentUser)
         return (
             <header className="header">
                 <div className="header__content"></div>
                 <div className="nav row">
                     <div className="nav__logo col-4">
-                        <img className="" src="./image/logo.png" alt="" />
+                        {/* <img  className="" src="./image/logo.png" alt="" /> */}
+                        <img className="" src="http://cinestar.com.vn/pictures/moi/9Logo/white-2018.png" alt="" />
                     </div>
 
                     <nav className="nav_pc col-8">
@@ -34,7 +35,7 @@ class Header extends Component {
                                     <i className="fa fa-home"></i>
                                 </Link>
                             </div>
-                            <div className="col-11  nav_pc__list">
+                            <div className="col-11  nav_pc__list" style={{ display: "flex" }}>
                                 <ul>
 
                                     <li>
@@ -43,20 +44,27 @@ class Header extends Component {
                                     <li>
                                         <Link to="/khuyenmai">Khuyến Mãi</Link>
                                     </li>
-                                    <li>
-                                        <Link to="/contact">Contact</Link>
-                                    </li>
                                     {this.props.currentUser ?
                                         (<li>
-                                            <Link className="nav_mobile__list__link"
-                                                onClick={() => this.handleLogOut()}
-                                            >Logout</Link>
+                                            <div>
+                                                <Link className="nav_mobile__list__link"
+                                                    onClick={() => this.handleLogOut()}
+                                                >Logout</Link>
+                                            </div>
                                         </li>) :
                                         (<li>
                                             <Link to="/login" className="nav_mobile__list__link">Login</Link>
                                         </li>)
                                     }
+
                                 </ul>
+                                <div className="header__user">
+                                    {this.props.currentUser ? (
+                                        <li>
+                                            <Link to='/thongTinNguoiDung'><i className="fa fa-user-circle"></i>{this.props.currentUser.taiKhoan}</Link>
+                                        </li>
+                                    ) : ""}
+                                </div>
                             </div>
                         </div>
                     </nav>
@@ -76,24 +84,28 @@ class Header extends Component {
                                 <Link to="/" className="nav_mobile__list__link">home</Link>
                             </li>
                             <li>
-                                <Link to="/theater" className="nav_mobile__list__link">theater</Link>
+                                <Link to="/khuyenmai" className="nav_mobile__list__link">Khuyến Mãi</Link>
                             </li>
-                            <li>
-                                <Link to="/contact" className="nav_mobile__list__link">contact</Link>
-                            </li>
-
                             {this.props.currentUser ?
                                 (<li>
                                     <Link className="nav_mobile__list__link"
                                         onClick={() => this.handleLogOut()}
-                                    >LogOut</Link>
+                                    >LogOut </Link>
                                 </li>) :
                                 (<li>
                                     <Link to="/login" className="nav_mobile__list__link">LogIn</Link>
                                 </li>)
                             }
                         </ul>
+                        <div className="header__user">
+                            {this.props.currentUser ? (
+                                <li>
+                                    <Link to='/thongTinNguoiDung'><i className="fa fa-user-circle"></i>{this.props.currentUser.taiKhoan}</Link>
+                                </li>
+                            ) : ""}
+                        </div>
                     </nav>
+
                 </div>
             </header>
         )
