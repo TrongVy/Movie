@@ -6,7 +6,7 @@ export default class Footer1 extends Component {
     return (
       <div className="bottom">
         <div className="bottom-nav">
-          <img src="./image/logo.png"/>
+          <img src="http://cinestar.com.vn/pictures/moi/9Logo/white-2018.png"/>
           <div className="bottom-wrap">
             <div className="social">
               <h2>Liên kết</h2>
@@ -166,7 +166,7 @@ export default class Footer1 extends Component {
             <li>
               <a href="javascript:void(0);" data-name={1}>
                 <img
-                  src="./image/dolby2.png"
+                  src="	http://cinestar.com.vn/pictures/moi/8DinhDang/dolby2.png"
                   align="DOBLY ATMOS - CÔNG NGHỆ ÂM THANH MỚI MANG TÍNH ĐỘT PHÁ"
                 />
               </a>
@@ -174,7 +174,7 @@ export default class Footer1 extends Component {
             <li>
               <a href="javascript:void(0);" data-name={2}>
                 <img
-                  src="./image/crhistie.png"
+                  src="	http://cinestar.com.vn/pictures/moi/8DinhDang/crhistie.png"
                   align="Máy chiếu CHRISTIE"
                 />
               </a>
@@ -182,7 +182,7 @@ export default class Footer1 extends Component {
             <li>
               <a href="javascript:void(0);" data-name={3}>
                 <img
-                  src="./image/2d.jpg"
+                  src="http://cinestar.com.vn/pictures/moi/8DinhDang/2d.jpg"
                   align="Công nghệ chiếu phim 2D Digital"
                 />
               </a>
@@ -190,7 +190,7 @@ export default class Footer1 extends Component {
             <li>
               <a href="javascript:void(0);" data-name={4}>
                 <img
-                  src="./image/3d.png"
+                  src="http://cinestar.com.vn/pictures/moi/8DinhDang/3d.png"
                   align="Công nghệ chiếu phim 3D Digital"
                 />
               </a>
@@ -198,7 +198,7 @@ export default class Footer1 extends Component {
             <li>
               <a href="javascript:void(0);" data-name={5}>
                 <img
-                  src="./image/cinestar-coffee-02.png"
+                  src="http://cinestar.com.vn/pictures/webimages/Coffee/cinestar-coffee-02.png"
                   align="Cinestar Coffee"
                 />
               </a>
