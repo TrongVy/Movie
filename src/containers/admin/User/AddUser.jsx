@@ -29,14 +29,14 @@ export default function AddUser() {
             <form onSubmit={handleSubmit} >
                 <div className="row">
                     <div className="form-group col-6">
-                        <input type="text" className="form-control" placeholder="Tai Khoan" alt=""
+                        <input type="text" className="form-control" placeholder="Tài Khoản" alt=""
                             name="taiKhoan"
                             onChange={handleChange}
                         />
 
                     </div>
                     <div className="form-group col-6">
-                        <input type="password" className="form-control" placeholder="Mat Khau" alt=""
+                        <input type="password" className="form-control" placeholder="Mật Khẩu" alt=""
                             name="matKhau"
                             onChange={handleChange}
                         />
@@ -54,13 +54,13 @@ export default function AddUser() {
 
                 <div className="row">
                     <div className="form-group col-6">
-                        <input type="text" className="form-control" placeholder="So Dien Thoai" alt=""
+                        <input type="text" className="form-control" placeholder="Số Điện Thoại" alt=""
                             name="soDT"
                             onChange={handleChange}
                         />
                     </div>
                     <div className="form-group col-6">
-                        <input type="text" className="form-control" placeholder="Ma Nhom (GP...)" alt=""
+                        <input type="text" className="form-control" placeholder="Mã Nhóm (GP01,GP02..)" alt=""
                             name="maNhom"
                             onChange={handleChange}
                         />
@@ -69,13 +69,13 @@ export default function AddUser() {
 
                 <div className="row">
                     <div className="form-group col-12">
-                        <input type="text" className="form-control" placeholder="Ma Loai Nguoi Dung (QuanTri or KhachHang)" alt=""
+                        <input type="text" className="form-control" placeholder="Mã Loại Người Dùng (QuanTri or KhachHang)" alt=""
                             name="maLoaiNguoiDung"
                             onChange={handleChange}
                         />
                     </div>
                     <div className="form-group col-12">
-                        <input type="text" className="form-control" placeholder="hoTen" alt=""
+                        <input type="text" className="form-control" placeholder="Họ Tên" alt=""
                             name="hoTen"
                             onChange={handleChange}
                         />

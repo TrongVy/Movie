@@ -30,7 +30,7 @@ class MovieDetail extends Component {
                             <div className="movie_detail__header__right__A row">
 
                                 <div className="col-4">
-                                    <p>Ngay Khoi Chieu </p>
+                                    <p>Ngày Khởi Chiếu </p>
                                 </div>
                                 <div className="col-8">
                                     <span> {movieDetail.ngayKhoiChieu}</span>
@@ -39,14 +39,16 @@ class MovieDetail extends Component {
                             <div className="movie_detail__header__right__B row">
 
                                 <div className="col-3">
-                                    <p>Mo Ta </p>
+                                    <p>Mô Tả</p>
                                 </div>
                                 <div className="col-8 movie_detail__header__right__B__8">
-                                    <p>{movieDetail.moTa}</p>
+                                    <p>{movieDetail.moTa.length < 20 ? "Porro voluptatem perspiciatis temporibus aliquam quaerat deserunt in nihil possimus cupiditate ipsum sint rem dolorum repellat! Voluptate maiores officiis ipsum cum ut quis nostrum facilis unde omnis reprehenderit! Doloremque qui ab mollitia enim nobis, suscipit iusto sequi necessitatibus." : movieDetail.moTa
+                                    }</p>
+
                                 </div>
                             </div>
                             <div className="movie_detail__header__right__C mt-3">
-                                <p>Danh Gia : {movieDetail.danhGia}/10 IMDB</p>
+                                <p>Đánh Giá : {movieDetail.danhGia}/10 IMDB</p>
                             </div>
 
                         </div>
