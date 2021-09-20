@@ -9,53 +9,53 @@ import seatPlant from "containers/client/seatPlant/SeatPlant";
 // import Register from "containers/shared/Auth/Register/Register";
 
 export const clientRoutes = [
-    {
-        exact: true,
-        path: "/",
-        component: Home,
-        isPrivate: false,
-    },
-    {
-        exact: true,
-        path: "/khuyenmai",
-        component: KhuyenMai,
-        isPrivate: false,
-    },
-    {
-        exact: false,
-        path: "/movie-detail/:movieId",
-        component: MovieDetail,
-    },
-    {
-        exact: false,
-        path: "/seat-plan/:showtimeId",
-        component: seatPlant,
-        isPrivate: true,
-    },
-    {
-        exact: false,
-        path: "/thongTinNguoiDung",
-        component: LichSuDatVe,
-        isPrivate: true,
-    },
-]
+  {
+    exact: true,
+    path: "/",
+    component: Home,
+    isPrivate: false,
+  },
+  {
+    exact: true,
+    path: "/khuyenmai",
+    component: KhuyenMai,
+    isPrivate: false,
+  },
+  {
+    exact: false,
+    path: "/movie-detail/:movieId",
+    component: MovieDetail,
+  },
+  {
+    exact: false,
+    path: "/seat-plan/:showtimeId",
+    component: seatPlant,
+    isPrivate: true,
+  },
+  {
+    exact: false,
+    path: "/thongTinNguoiDung",
+    component: LichSuDatVe,
+    isPrivate: true,
+  },
+];
 export const adminRoutes = [
-    {
-        exact: true,
-        path: "/admin",
-        component: Dashboard,
-        isPrivate: true,
-    },
-    {
-        exact: false,
-        path: "/admin/movie",
-        component: Movie,
-        isPrivate: true,
-    },
-    {
-        exact: false,
-        path: "/admin/user",
-        component: User,
-        isPrivate: true,
-    },
-]
+  {
+    exact: true,
+    path: "/admin",
+    component: Dashboard,
+    isPrivate: true,
+  },
+  {
+    exact: false,
+    path: "/admin/movie",
+    component: Movie,
+    isPrivate: true,
+  },
+  {
+    exact: false,
+    path: "/admin/user",
+    component: User,
+    isPrivate: true,
+  },
+];

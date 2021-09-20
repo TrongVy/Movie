@@ -11,7 +11,7 @@ export default class Footer2 extends Component {
             <li>
               <a>
                 <img
-                  src="./image/napas-40.png"
+                  src="http://cinestar.com.vn/pictures/cache/webimages/9Rest/1Logo/napas-40.png"
                   alt="Thẻ thanh toán nội địa"
                 />
               </a>
@@ -19,7 +19,7 @@ export default class Footer2 extends Component {
             <li>
               <a>
                 <img
-                  src="./image/payment-visa.png"
+                  src="http://cinestar.com.vn/pictures/moi/ThanhToan/payment-visa.png"
                   alt="Visa"
                 />
               </a>
@@ -27,7 +27,7 @@ export default class Footer2 extends Component {
             <li>
               <a>
                 <img
-                  src="./image/payment-mastercard.png"
+                  src="http://cinestar.com.vn/pictures/moi/ThanhToan/payment-mastercard.png"
                   alt="mastercard"
                 />
               </a>
@@ -35,7 +35,7 @@ export default class Footer2 extends Component {
             <li>
               <a>
                 <img
-                  src="./image/zalopay.png"
+                  src="	http://cinestar.com.vn/pictures/webimages/9Rest/1Logo/zalopay.png"
                   alt="ZaloPay"
                 />
               </a>
@@ -43,7 +43,7 @@ export default class Footer2 extends Component {
             <li>
               <a>
                 <img
-                  src="./image/momo.jpg"
+                  src="	http://cinestar.com.vn/pictures/webimages/momo.jpg"
                   alt="Ví MoMo"
                 />
               </a>
@@ -58,7 +58,7 @@ export default class Footer2 extends Component {
             >
               <img
                 width="150px"
-                src="./image/dathongbao.png"
+                src="http://cinestar.com.vn/catalog/view/theme/default/images/dathongbao.png"
                 alt=" đã được duyệt"
               />
             </a>{" "}

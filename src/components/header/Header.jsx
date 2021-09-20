@@ -127,6 +127,14 @@ class Header extends Component {
                   </Link>
                 </li>
               )}
+              ,
+              {/* {this.props.currentUser.maLoaiNguoiDung === 'QuanTri' ? (
+                <li>
+                  <Link className="nav_mobile__list__link" to="/admin">
+                    Admin
+                  </Link>
+                </li>
+              ) : ''}, */}
             </ul>
             <div className="header__user">
               {this.props.currentUser ? (
