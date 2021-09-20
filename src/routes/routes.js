@@ -2,8 +2,8 @@ import Dashboard from "containers/admin/Dashboard/Dashboard";
 import Home from "containers/client/home/Home";
 import KhuyenMai from "containers/client/khuyenMai/KhuyenMai";
 import MovieDetail from "containers/client/movieDetail/MovieDetail";
+import LichSuDatVe from "containers/client/seatPlant/LichSuDatVe";
 import seatPlant from "containers/client/seatPlant/SeatPlant";
-import Register from "containers/shared/Auth/Register/Register";
 
 export const clientRoutes = [
     {
@@ -27,6 +27,12 @@ export const clientRoutes = [
         exact: false,
         path: "/seat-plan/:showtimeId",
         component: seatPlant,
+        isPrivate: true,
+    },
+    {
+        exact: false,
+        path: "/thongTinNguoiDung",
+        component: LichSuDatVe,
         isPrivate: true,
     },
 ]

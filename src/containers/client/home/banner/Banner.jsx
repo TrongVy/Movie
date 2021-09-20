@@ -10,7 +10,7 @@ export default class Banner extends Component {
                         <div className="col-8 banner__item">
                             <div className="banner__item__content">
                                 <img height={50} width={50} src="./image/icon-register.png" alt="" />
-                                <Link to="/register">Đăng Ký Thành Viên</Link>
+                                <Link to="/register" target="_blank">Đăng Ký Thành Viên</Link>
                             </div>
                             <div className="banner__item__content">
                                 <img height={50} width={50} src="./image/icon-login.png" alt="" />

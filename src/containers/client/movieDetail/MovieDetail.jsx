@@ -53,64 +53,64 @@ class MovieDetail extends Component {
                     </div>
                     <h1 className="mt-5 font-italic">Rạp - Cụm Rạp - Lịch Chiếu</h1>
                     {/* navs pills bootstrap */}
-             <div className="container">
-             <div className="row">
-                        <div className="col-xl-3 col-lg-3 col-md-3 col-sm-4 col-5">
-                            <div className="nav flex-column nav-pills text-left" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                    {movieDetail.heThongRapChieu.length !== 0 ? <div className="container">
+                        <div className="row">
+                            <div className="col-xl-3 col-lg-3 col-md-3 col-sm-4 col-5">
+                                <div className="nav flex-column nav-pills text-left" id="v-pills-tab" role="tablist" aria-orientation="vertical">
 
-                                {movieDetail.heThongRapChieu.map((heThongRap, index) => {
-                                    return (
-                                        <a key={index} className={`nav-link ${index === 0 && 'active'}`} id="v-pills-home-tab" data-toggle="pill"
-                                            href={`#${heThongRap.maHeThongRap}`} role="tab" aria-controls="v-pills-home" aria-selected="true">
-                                            <img className="img-fluid mr-2" src={heThongRap.logo} alt="" height={50} width={50} />
-                                            <span style={{ textTransform: "uppercase" }}>  {heThongRap.tenHeThongRap}</span>
-                                        </a>
-                                    )
-                                })}
+                                    {movieDetail.heThongRapChieu.map((heThongRap, index) => {
+                                        return (
+                                            <a key={index} className={`nav-link ${index === 0 && 'active'}`} id="v-pills-home-tab" data-toggle="pill"
+                                                href={`#${heThongRap.maHeThongRap}`} role="tab" aria-controls="v-pills-home" aria-selected="true">
+                                                <img className="img-fluid mr-2" src={heThongRap.logo} alt="" height={50} width={50} />
+                                                <span style={{ textTransform: "uppercase" }}>  {heThongRap.tenHeThongRap}</span>
+                                            </a>
+                                        )
+                                    })}
+                                </div>
                             </div>
-                        </div>
 
-                        <div className="col-xl-9 col-lg-9 col-md-9 col-sm-8 col-7">
-                            <div className="tab-content" id="v-pills-tabContent">
+                            <div className="col-xl-9 col-lg-9 col-md-9 col-sm-8 col-7">
+                                <div className="tab-content" id="v-pills-tabContent">
 
-                                {movieDetail.heThongRapChieu.map((heThongRap, index) => {
-                                    return (
-                                        <div key={index}
+                                    {movieDetail.heThongRapChieu.map((heThongRap, index) => {
+                                        return (
+                                            <div key={index}
 
-                                            className={`tab-pane fade show ${index === 0 && 'active'}`}
-                                            id={heThongRap.maHeThongRap} role="tabpanel" aria-labelledby="v-pills-home-tab">
-                                            {heThongRap.cumRapChieu.map((cumRap, index) => {
-                                                return (
-                                                    <div key={index}>
-                                                        <div className="mt-2 text-left ">
-                                                            {/* <img src={cumRap.hinhAnh} height={50} width={50} alt="" /> */}
-                                                            {/* <h2 className="ml-2">{cumRap.tenCumRap}</h2> */}
-                                                            <a className="btn btn-danger" data-toggle="collapse" href={`#${cumRap.maCumRap}`} role="button" aria-expanded="false" aria-controls="multiCollapseExample1">{cumRap.tenCumRap}</a>
+                                                className={`tab-pane fade show ${index === 0 && 'active'}`}
+                                                id={heThongRap.maHeThongRap} role="tabpanel" aria-labelledby="v-pills-home-tab">
+                                                {heThongRap.cumRapChieu.map((cumRap, index) => {
+                                                    return (
+                                                        <div key={index}>
+                                                            <div className="mt-2 text-left ">
+                                                                {/* <img src={cumRap.hinhAnh} height={50} width={50} alt="" /> */}
+                                                                {/* <h2 className="ml-2">{cumRap.tenCumRap}</h2> */}
+                                                                <a className="btn btn-danger" data-toggle="collapse" href={`#${cumRap.maCumRap}`} role="button" aria-expanded="false" aria-controls="multiCollapseExample1">{cumRap.tenCumRap}</a>
+                                                            </div>
+                                                            <div class="collapse multi-collapse" id={`${cumRap.maCumRap}`}>
+                                                                {cumRap.lichChieuPhim.map((lichChieu, index) => {
+                                                                    return (
+                                                                        <span key={index}>
+                                                                            <Link className="btn btn-info ml-2 mt-2"
+                                                                                to={`/seat-plan/${lichChieu.maLichChieu}`}
+                                                                            >
+                                                                                {new Date(lichChieu.ngayChieuGioChieu).toLocaleString()}
+                                                                            </Link>
+                                                                        </span>
+                                                                    )
+                                                                })}
+                                                            </div>
                                                         </div>
-                                                        <div class="collapse multi-collapse" id={`${cumRap.maCumRap}`}>
-                                                            {cumRap.lichChieuPhim.map((lichChieu, index) => {
-                                                                return (
-                                                                    <span key={index}>
-                                                                        <Link className="btn btn-info ml-2 mt-2"
-                                                                            to={`/seat-plan/${lichChieu.maLichChieu}`}
-                                                                        >
-                                                                            {new Date(lichChieu.ngayChieuGioChieu).toLocaleString()}
-                                                                        </Link>
-                                                                    </span>
-                                                                )
-                                                            })}
-                                                        </div>
-                                                    </div>
-                                                )
-                                            })}
-                                        </div>
-                                    )
-                                })}
+                                                    )
+                                                })}
+                                            </div>
+                                        )
+                                    })}
+                                </div>
                             </div>
-                        </div>
 
-                    </div>
-             </div>
+                        </div>
+                    </div> : <h4>Chưa Có Lịch Chiếu</h4>}
                 </div>
             </div>
         )
@@ -121,8 +121,7 @@ class MovieDetail extends Component {
         try {
             const { movieId } = this.props.match.params;
             const { data } = await movieApi.fetchMovieDetailApi(movieId);
-
-            // console.log("data", data)
+            // console.log("data",data)
             setTimeout(() => {
                 this.props.fetchMovieDetail(data.content)
             }, 1200)

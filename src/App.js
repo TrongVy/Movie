@@ -11,7 +11,6 @@ import Login from 'containers/shared/Auth/Login/Login';
 import AdminLayout from 'layouts/AdminLayout';
 import Register from 'containers/shared/Auth/Register/Register';
 
-
 function App() {
   const renderLayout = (routes, Layout) => {
     return routes.map((route, index) => {
@@ -31,8 +30,6 @@ function App() {
           <Route path="/login" component={Login} />
           <Route path="/register" component={Register} />
           <Route path="*" component={PageNotFound} />
-
-
         </Switch>
       </Router>
 

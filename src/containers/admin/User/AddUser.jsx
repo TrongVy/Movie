@@ -13,13 +13,14 @@ export default function AddUser() {
     }
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log(user);
+        // console.log(user);
         // post api add user
         userApi.addUserApi(user, currentUser.accessToken)
             .then((res) => {
-                console.log(res)
+                alert(res.data.message)
             })
             .catch(error => {
+                alert("Thất Bại ! kiểm tra lại thông tin nhập")
                 console.log(error)
             })
     }
