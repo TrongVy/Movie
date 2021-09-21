@@ -4,12 +4,10 @@ import { useFormik } from "formik";
 import { actUpdateMovie } from "./action";
 
 export default function PutMovie(props) {
-  const dispatch = useDispatch();
+  const dispatch = useDispatch()
   const ThongTinPhim = props.hangdleMovie;
   const [Image, setImage] = useState("");
-  const token = useSelector(
-    (state) => state.authReducer.currentUser.accessToken
-  );
+  const token = useSelector(state => state.authReducer.currentUser.accessToken)
   const formik = useFormik({
     enableReinitialize: true,
     initialValues: {
@@ -34,7 +32,7 @@ export default function PutMovie(props) {
       for (let key in value) {
         formData.append(key, value[key]);
       }
-
+      
       // call api
       dispatch(actUpdateMovie(formData, token));
     },

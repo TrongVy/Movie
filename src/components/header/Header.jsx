@@ -68,15 +68,11 @@ class Header extends Component {
                       </Link>
                     </li>
                   )}
-                  {this.props.currentUser.maLoaiNguoiDung ? (
-                    <li>
-                      <div>
-                        <Link to="/admin" className="nav_mobile__list__link">
-                          Admin
-                        </Link>
-                      </div>
-                    </li>
-                  ) : null}
+                  <li>
+                    <Link to='/admin' className="nav_mobile__list__link">
+                      Admin
+                    </Link>
+                  </li>
                 </ul>
                 <div className="header__user">
                   {this.props.currentUser ? (

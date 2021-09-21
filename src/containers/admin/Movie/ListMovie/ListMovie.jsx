@@ -1,3 +1,4 @@
+import { actFetchAllMovie } from "containers/client/home/module/action";
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import PutMovie from "../PutMovie/PutMovie";
@@ -12,7 +13,7 @@ class ListMovie extends Component {
   };
   render() {
     const { listMovie, token } = this.props;
-    // console.log(this.props.listMovie);
+    // console.log(this.props.fetchAllMovies);
     return (
       <div className="row float-left">
         {listMovie.map((movie) => {
@@ -61,6 +62,9 @@ class ListMovie extends Component {
       </div>
     );
   }
+  componentDidMount() {
+    this.props.fetchAllMovies()
+  }
 }
 
 const mapStateToProps = (state) => ({
@@ -69,6 +73,9 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
+  fetchAllMovies: () => {
+    dispatch(actFetchAllMovie())
+  },
   fetchDeleteFilm: (maPhim, token) => {
     dispatch(actDeleteFilm(maPhim, token));
   },
