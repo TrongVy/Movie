@@ -1,24 +1,19 @@
-import React, {useEffect, useState} from "react";
-
-import { useFormik } from "formik";
+import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { laythongTinPhim } from "./module/action";
+import { useFormik } from "formik";
+import { actUpdateMovie } from "./action";
 
 export default function PutMovie(props) {
-  const ThongTinPhim = props.hangdleMovie
-  const [Image, setImage] = useState('')
-  // const dispatch = useDispatch()
-  // useEffect( () => {
-  //   let {hangdleMovie} = props
-  //   dispatch(laythongTinPhim(hangdleMovie))
-  // })
-
-  // const ThongTinPhim  = useSelector((state) => state.ThongTinPhim.ThongTinPhim);
-
-  // console.log(ThongTinPhim)
+  const dispatch = useDispatch();
+  const ThongTinPhim = props.hangdleMovie;
+  const [Image, setImage] = useState("");
+  const token = useSelector(
+    (state) => state.authReducer.currentUser.accessToken
+  );
   const formik = useFormik({
     enableReinitialize: true,
     initialValues: {
+      maphim: ThongTinPhim?.maPhim,
       tenPhim: ThongTinPhim?.tenPhim,
       biDanh: ThongTinPhim?.biDanh,
       trailer: ThongTinPhim?.trailer,
@@ -32,32 +27,30 @@ export default function PutMovie(props) {
       sapChieu: ThongTinPhim?.sapChieu,
     },
     onSubmit: (value) => {
-      // console.log("value", moment(value.ngayKhoiChieu).format("DD/MM/YYYY"));
       console.log("value", value);
 
       // form data
-
       let formData = new FormData();
-
       for (let key in value) {
         formData.append(key, value[key]);
       }
-      //call api
-      // dispatch(actFormDate(formData));
+
+      // call api
+      dispatch(actUpdateMovie(formData, token));
     },
   });
 
   // custom hình
   const handleChangeImage = (e) => {
     let image = e.target.files[0];
-    if(e.target.files[0]) {
-      formik.setFieldValue('hinhAnh', e.target.files[0])
-      var reader = new FileReader()
-      reader.readAsDataURL(e.target.files[0])
-      setImage(reader.result)
-      reader.onload = function(e) {
-        setImage(e.target.result)
-      }
+    if (e.target.files[0]) {
+      formik.setFieldValue("hinhAnh", e.target.files[0]);
+      var reader = new FileReader();
+      reader.readAsDataURL(e.target.files[0]);
+      setImage(reader.result);
+      reader.onload = function (e) {
+        setImage(e.target.result);
+      };
     }
     formik.setFieldValue("hinhAnh", image);
   };
@@ -80,16 +73,18 @@ export default function PutMovie(props) {
                 className="modal-header text-center"
                 style={{ display: "block" }}
               >
-                <h5 className="modal-title" id="staticBackdropLabel">
-                  Modal Movie
-                </h5>
+                <h1 className="modal-title" id="staticBackdropLabel">
+                  Update Film
+                </h1>
                 <button
                   type="button"
                   className="close"
                   data-dismiss="modal"
                   aria-label="Close"
                 >
-                  <span aria-hidden="true">×</span>
+                  <span aria-hidden="true" onClick={() => setImage("")}>
+                    ×
+                  </span>
                 </button>
               </div>
               <div className="modal-body">
@@ -118,9 +113,12 @@ export default function PutMovie(props) {
                           multiple
                           className="form-control"
                           onChange={handleChangeImage}
-                          // value={formik.values.hinhAnh}
                         />
-                        <img width={100} src={Image === '' ? ThongTinPhim?.hinhAnh : Image} alt="..." />
+                        <img
+                          width={100}
+                          src={Image === "" ? ThongTinPhim?.hinhAnh : Image}
+                          alt="..."
+                        />
                       </div>
                     </div>
                   </div>
@@ -221,7 +219,7 @@ export default function PutMovie(props) {
                           className="form-control"
                           name="ngayKhoiChieu"
                           value={formik.values.ngayKhoiChieu}
-                          onChange={formik.handleDate}
+                          onChange={formik.handleChange}
                         />
                       </div>
                     </div>
@@ -241,13 +239,14 @@ export default function PutMovie(props) {
                     </div>
                   </div>
                   <div className="modal-footer">
-                    <button type="submit" className="btn btn-primary">
-                      Thêm
+                    <button type="submit" className="btn btn-success">
+                      Update
                     </button>
                     <button
                       type="button"
                       className="btn btn-secondary"
                       data-dismiss="modal"
+                      onClick={() => setImage("")}
                     >
                       Close
                     </button>

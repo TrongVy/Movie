@@ -68,6 +68,15 @@ class Header extends Component {
                       </Link>
                     </li>
                   )}
+                  {this.props.currentUser.maLoaiNguoiDung ? (
+                    <li>
+                      <div>
+                        <Link to="/admin" className="nav_mobile__list__link">
+                          Admin
+                        </Link>
+                      </div>
+                    </li>
+                  ) : null}
                 </ul>
                 <div className="header__user">
                   {this.props.currentUser ? (
@@ -82,71 +91,6 @@ class Header extends Component {
                   )}
                 </div>
               </div>
-            </div>
-          </nav>
-
-          <label htmlFor="nav_mobile-input" className="nav-bars-btn">
-            <i className="fa fa-align-justify text-danger"></i>
-          </label>
-          <input
-            hidden
-            className="nav__input"
-            type="checkbox"
-            id="nav_mobile-input"
-          />
-          <label htmlFor="nav_mobile-input" className="nav_overlay"></label>
-
-          <nav className="nav_mobile">
-            <label htmlFor="nav_mobile-input" className="nav_mobile__close">
-              <i className="fa fa-times"></i>
-            </label>
-            <ul className="nav_mobile__list">
-              <li>
-                <Link to="/" className="nav_mobile__list__link">
-                  home
-                </Link>
-              </li>
-              <li>
-                <Link to="/khuyenmai" className="nav_mobile__list__link">
-                  Khuyến Mãi
-                </Link>
-              </li>
-              {this.props.currentUser ? (
-                <li>
-                  <Link
-                    className="nav_mobile__list__link"
-                    onClick={() => this.handleLogOut()}
-                  >
-                    LogOut{" "}
-                  </Link>
-                </li>
-              ) : (
-                <li>
-                  <Link to="/login" className="nav_mobile__list__link">
-                    LogIn
-                  </Link>
-                </li>
-              )}
-              ,
-              {/* {this.props.currentUser.maLoaiNguoiDung === 'QuanTri' ? (
-                <li>
-                  <Link className="nav_mobile__list__link" to="/admin">
-                    Admin
-                  </Link>
-                </li>
-              ) : ''}, */}
-            </ul>
-            <div className="header__user">
-              {this.props.currentUser ? (
-                <li>
-                  <Link to="/thongTinNguoiDung">
-                    <i className="fa fa-user-circle"></i>
-                    {this.props.currentUser.taiKhoan}
-                  </Link>
-                </li>
-              ) : (
-                ""
-              )}
             </div>
           </nav>
         </div>
