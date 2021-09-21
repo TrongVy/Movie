@@ -42,7 +42,7 @@ class MovieDetail extends Component {
                                     <p>Mô Tả</p>
                                 </div>
                                 <div className="col-8 movie_detail__header__right__B__8">
-                                    <p>{movieDetail.moTa.length < 20 ? "Porro voluptatem perspiciatis temporibus aliquam quaerat deserunt in nihil possimus cupiditate ipsum sint rem dolorum repellat! Voluptate maiores officiis ipsum cum ut quis nostrum facilis unde omnis reprehenderit! Doloremque qui ab mollitia enim nobis, suscipit iusto sequi necessitatibus." : movieDetail.moTa
+                                   <p>{movieDetail.moTa.length < 20 ? "Porro voluptatem perspiciatis temporibus aliquam quaerat deserunt in nihil possimus cupiditate ipsum sint rem dolorum repellat! Voluptate maiores officiis ipsum cum ut quis nostrum facilis unde omnis reprehenderit! Doloremque qui ab mollitia enim nobis, suscipit iusto sequi necessitatibus." : movieDetail.moTa.length > 300 ? movieDetail.moTa.slice(0, 300) + "..." : movieDetail.moTa
                                     }</p>
 
                                 </div>
