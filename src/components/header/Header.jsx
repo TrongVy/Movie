@@ -68,11 +68,6 @@ class Header extends Component {
                       </Link>
                     </li>
                   )}
-                  <li>
-                    <Link to='/admin' className="nav_mobile__list__link">
-                      Admin
-                    </Link>
-                  </li>
                 </ul>
                 <div className="header__user">
                   {this.props.currentUser ? (
