@@ -13,7 +13,7 @@ class ListMovie extends Component {
   };
   render() {
     const { listMovie } = this.props;
-    // console.log(this.props.listMovie);
+    console.log(this.props.listMovie);
     return (
       <div className="row float-left">
         {listMovie.map((movie) => {

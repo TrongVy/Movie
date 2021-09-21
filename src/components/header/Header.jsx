@@ -56,6 +56,7 @@ class Header extends Component {
                         <Link
                           className="nav_mobile__list__link"
                           onClick={() => this.handleLogOut()}
+                          to="#"
                         >
                           Logout
                         </Link>
@@ -127,14 +128,14 @@ class Header extends Component {
                   </Link>
                 </li>
               )}
-              ,
-              {/* {this.props.currentUser.maLoaiNguoiDung === 'QuanTri' ? (
+              
+              {this.props.currentUser.maLoaiNguoiDung === 'QuanTri' ? (
                 <li>
                   <Link className="nav_mobile__list__link" to="/admin">
                     Admin
                   </Link>
                 </li>
-              ) : ''}, */}
+              ) : ''}
             </ul>
             <div className="header__user">
               {this.props.currentUser ? (
