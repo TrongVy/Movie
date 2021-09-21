@@ -44,13 +44,13 @@ export default function User() {
             .then((res) => {
                 alert("Xóa Thành Công!")
                 userApi.getUsersPagingApi(page)
-                .then((res) => {
-                    console.log("res: ", res)
-                    setUser(res.data.content)
-                })
-                .catch((err) => {
-                    console.log("err : ", err)
-                })
+                    .then((res) => {
+                        console.log("res: ", res)
+                        setUser(res.data.content)
+                    })
+                    .catch((err) => {
+                        console.log("err : ", err)
+                    })
                 console.log(res)
             })
             .catch(error => {
@@ -227,7 +227,7 @@ export default function User() {
                                         <td>
                                             <button className="btn btn-danger ml-1"
                                                 onClick={() => deleteUser(user.taiKhoan)}
-                                            >Xoa</button>
+                                            >Xóa</button>
                                         </td>
                                     </tr>
                                 )
@@ -264,7 +264,7 @@ export default function User() {
                     <div className="modal-dialog" role="document">
                         <div className="modal-content">
                             <div className="modal-header">
-                                <h5 className="modal-title">Update User</h5>
+                                <h5 className="modal-title">Update Account</h5>
                             </div>
                             <div className="modal-body">
                                 {/* // body */}
@@ -324,7 +324,7 @@ export default function User() {
                                     </div>
 
                                     <div className="form-group">
-                                        <button className="btn btn-info">Update User</button>
+                                        <button className="btn btn-info">Update Account</button>
                                     </div>
 
                                 </form>

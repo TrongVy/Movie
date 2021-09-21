@@ -8,7 +8,7 @@ export default function LichSuDatVe() {
         thongTingNguoiDung: ""
     })
     const { currentUser } = useSelector((state) => state.authReducer);
-    // console.log("thong tin tai khoan :",currentUser);
+    console.log("thong tin tai khoan :",currentUser.accessToken);
     useEffect(() => {
         userApi.thongTinNguoiDungApi(currentUser.accessToken)
             .then((res) => {
@@ -55,7 +55,7 @@ export default function LichSuDatVe() {
                                         {ve.danhSachGhe.map((ghe, index) => {
                                             return (
                                                 <div key={index} className=" dat__ve__right-last ">
-                                                    <p>Ghế {ghe.tenGhe}-{ghe.tenCumRap}-{ghe.tenHeThongRap}</p>
+                                                    <p className="text-light">Ghế {ghe.tenGhe}-{ghe.tenCumRap}-{ghe.tenHeThongRap}</p>
                                                 </div>
                                             )
                                         })}
