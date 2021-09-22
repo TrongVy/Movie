@@ -45,10 +45,10 @@ class Filter extends Component {
     }
 
     handleClickRap = () => {
-        if (this.state.idFilm === "" ) {
+        if (this.state.idFilm === "") {
             this.setState({
                 ...this.state,
-                chonRap:!this.state.chonRap,
+                chonRap: !this.state.chonRap,
                 chonXuatChieu: false
             })
         } else {
@@ -67,15 +67,15 @@ class Filter extends Component {
         })
     }
 
-    handleClickXuatChieu = ()=>{
-        if(this.state.index ===""){
+    handleClickXuatChieu = () => {
+        if (this.state.index === "") {
             this.setState({
                 ...this.setState,
                 chonXuatChieu: !this.state.chonXuatChieu
             })
         }
     }
-    
+
     render() {
         const { movieDetail } = this.props;
         // console.log("phim detail", movieDetail)
@@ -93,7 +93,7 @@ class Filter extends Component {
                             {this.props.listMovie.map((film, index) => {
                                 return (
                                     <option key={index} value={film.tenPhim} id={film.maPhim}>
-                                        {film.tenPhim.length >20 ?film.tenPhim.slice(0,20):film.tenPhim}  </option>
+                                        {film.tenPhim.length > 20 ? film.tenPhim.slice(0, 20) : film.tenPhim}  </option>
                                 )
                             })}
                         </select>
@@ -118,8 +118,8 @@ class Filter extends Component {
                     <div className="col-4">
                         <h4 >Chọn Xuất Chiếu </h4>
                         <select className="" name="lichChieu"
-                         onChange={this.handleChangeLichChieu}
-                         onClick={this.handleClickXuatChieu}
+                            onChange={this.handleChangeLichChieu}
+                            onClick={this.handleClickXuatChieu}
                         >
                             <option>Ngày Chiếu Giờ Chiếu</option>
                             {this.state.index !== '' ? movieDetail.heThongRapChieu[this.state.index].cumRapChieu[0].lichChieuPhim.map((lichChieu, index) => {
@@ -136,7 +136,7 @@ class Filter extends Component {
                             className={this.state.maLichChieu === "" ?
                                 "btn btn-default ml-2 filter__btn " :
                                 "btn btn-warning ml-2 font-weight-bold "}
-                        >Đặt Vé</Link>  
+                        >Đặt Vé</Link>
                     </div>
                 </div>
             </div>

@@ -1,8 +1,8 @@
+import { actFetchAllMovie } from "containers/client/home/module/action";
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { laythongTinPhim } from "../PutMovie/module/action";
 import PutMovie from "../PutMovie/PutMovie";
-import UpdateDataMovie from "../UpdateDataMovie/UpdateDataMovie";
+import actDeleteFilm from "./action";
 
 class ListMovie extends Component {
   state = {
@@ -12,8 +12,8 @@ class ListMovie extends Component {
     this.setState({ movie: movie });
   };
   render() {
-    const { listMovie } = this.props;
-    console.log(this.props.listMovie);
+    const { listMovie, token } = this.props;
+    // console.log(this.props.listMovie);
     return (
       <div className="row float-left">
         {listMovie.map((movie) => {
@@ -49,7 +49,12 @@ class ListMovie extends Component {
               >
                 Xem
               </button>
-              <button className="btn btn-danger">Xóa</button>
+              <button
+                onClick={() => this.props.fetchDeleteFilm(maPhim, token)}
+                className="btn btn-danger"
+              >
+                Xóa
+              </button>
             </div>
           );
         })}
@@ -57,10 +62,23 @@ class ListMovie extends Component {
       </div>
     );
   }
+  componentDidMount() {
+    this.props.fetchAllMovies()
+  }
 }
 
 const mapStateToProps = (state) => ({
   listMovie: state.movieListReducer.listMovie,
+  token: state.authReducer.currentUser.accessToken,
 });
 
-export default connect(mapStateToProps)(ListMovie);
+const mapDispatchToProps = (dispatch) => ({
+  fetchAllMovies: () => {
+    dispatch(actFetchAllMovie())
+  },
+  fetchDeleteFilm: (maPhim, token) => {
+    dispatch(actDeleteFilm(maPhim, token));
+  },
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(ListMovie);

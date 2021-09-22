@@ -1,4 +1,3 @@
-import Dashboard from "containers/admin/Dashboard/Dashboard";
 import Movie from "containers/admin/Movie/Movie";
 import User from "containers/admin/User/User";
 import Home from "containers/client/home/Home";
@@ -41,14 +40,8 @@ export const clientRoutes = [
 ];
 export const adminRoutes = [
   {
-    exact: true,
-    path: "/admin",
-    component: Dashboard,
-    isPrivate: true,
-  },
-  {
     exact: false,
-    path: "/admin/movie",
+    path: "/admin",
     component: Movie,
     isPrivate: true,
   },

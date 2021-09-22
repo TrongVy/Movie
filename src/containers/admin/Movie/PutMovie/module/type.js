@@ -1,1 +1,0 @@
-export const SET_THONG_TIN_PHIM = 'SET_THONG_TIN_PHIM'

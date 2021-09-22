@@ -16,14 +16,17 @@ const movieApi = {
     datVeApi(thongTinDatVe, token) {
         return callApi("QuanLyDatVe/DatVe", "POST", thongTinDatVe, token)
     },
+    // thêm phim
     postMovies(formDate) {
         return callApi(`QuanLyPhim/ThemPhimUploadHinh`, "POST", formDate)
     },
-    upDateMovie(formData) {
-        return callApi(`QuanLyPhim/CapNhatPhimUpload`, "POST", formData)
+    // cập nhật phim
+    upDateMovie(formData, token) {
+        return callApi(`QuanLyPhim/CapNhatPhimUpload`, "POST", formData, token)
     },
-    layThongTinPhim(maPhim) {
-        return callApi(`QuanLyPhim/LayThongTinPhim?MaPhim=${maPhim}`)
-    } 
+    // xóa phim
+    deleteMovie(maPhim, token) {
+        return callApi(`QuanLyPhim/XoaPhim?MaPhim=${maPhim}`, "DELETE", maPhim ,token)
+    }
 }
 export default movieApi;
