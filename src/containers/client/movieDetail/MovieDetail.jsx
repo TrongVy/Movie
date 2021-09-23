@@ -42,7 +42,7 @@ class MovieDetail extends Component {
                                     <p>Mô Tả</p>
                                 </div>
                                 <div className="col-8 movie_detail__header__right__B__8">
-                                   <p>{movieDetail.moTa.length < 20 ? "Porro voluptatem perspiciatis temporibus aliquam quaerat deserunt in nihil possimus cupiditate ipsum sint rem dolorum repellat! Voluptate maiores officiis ipsum cum ut quis nostrum facilis unde omnis reprehenderit! Doloremque qui ab mollitia enim nobis, suscipit iusto sequi necessitatibus." : movieDetail.moTa.length > 300 ? movieDetail.moTa.slice(0, 300) + "..." : movieDetail.moTa
+                                    <p>{movieDetail.moTa.length < 20 ? "Porro voluptatem perspiciatis temporibus aliquam quaerat deserunt in nihil possimus cupiditate ipsum sint rem dolorum repellat! Voluptate maiores officiis ipsum cum ut quis nostrum facilis unde omnis reprehenderit! Doloremque qui ab mollitia enim nobis, suscipit iusto sequi necessitatibus." : movieDetail.moTa.length > 300 ? movieDetail.moTa.slice(0, 300) + "..." : movieDetail.moTa
                                     }</p>
 
                                 </div>
@@ -89,7 +89,7 @@ class MovieDetail extends Component {
                                                                 {/* <h2 className="ml-2">{cumRap.tenCumRap}</h2> */}
                                                                 <a className="btn btn-danger" data-toggle="collapse" href={`#${cumRap.maCumRap}`} role="button" aria-expanded="false" aria-controls="multiCollapseExample1">{cumRap.tenCumRap}</a>
                                                             </div>
-                                                            <div class="collapse multi-collapse" id={`${cumRap.maCumRap}`}>
+                                                            <div className="collapse multi-collapse" id={`${cumRap.maCumRap}`}>
                                                                 {cumRap.lichChieuPhim.map((lichChieu, index) => {
                                                                     return (
                                                                         <span key={index}>

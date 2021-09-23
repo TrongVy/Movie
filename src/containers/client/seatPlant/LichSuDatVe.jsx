@@ -8,14 +8,14 @@ export default function LichSuDatVe() {
         thongTingNguoiDung: ""
     })
     const { currentUser } = useSelector((state) => state.authReducer);
-    console.log("thong tin tai khoan :",currentUser.accessToken);
+    console.log("thong tin tai khoan :", currentUser.accessToken);
     useEffect(() => {
         userApi.thongTinNguoiDungApi(currentUser.accessToken)
             .then((res) => {
                 console.log(res.data.content);
-                setTimeout(() => {
-                    setState({ thongTingNguoiDung: res.data.content })
-                }, 500)
+                // setTimeout(() => {
+                setState({ thongTingNguoiDung: res.data.content })
+                // }, 500)
             })
             .catch((err) => {
                 console.log("loi", err)
@@ -51,7 +51,7 @@ export default function LichSuDatVe() {
                                         <p><span className="font-weight-bold">Ngày Đặt</span>  : {ve.ngayDat}</p>
                                         <p><span className="font-weight-bold">Thời Lượng Phim</span>  : {ve.thoiLuongPhim} Phút</p>
                                     </div>
-                                    <div clasNam="col-xl-5 col-lg-12 col-md-12 col-sm-12 lichSuDatGhe " >
+                                    <div clasName="col-xl-5 col-lg-12 col-md-12 col-sm-12 lichSuDatGhe " >
                                         {ve.danhSachGhe.map((ghe, index) => {
                                             return (
                                                 <div key={index} className=" dat__ve__right-last ">

@@ -6,7 +6,7 @@ export default class Footer1 extends Component {
     return (
       <div className="bottom">
         <div className="bottom-nav">
-          <img src="http://cinestar.com.vn/pictures/moi/9Logo/white-2018.png"/>
+          <img src="http://cinestar.com.vn/pictures/moi/9Logo/white-2018.png" />
           <div className="bottom-wrap">
             <div className="social">
               <h2>Liên kết</h2>
