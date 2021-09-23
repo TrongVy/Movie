@@ -13,6 +13,12 @@
   margin-bottom: 5px;
 }
 
+@media screen and (max-width: 480px) {
+  .promotion-list-wrap .promotion-block {
+    height: auto;
+  }
+}
+
 .promotion-list-wrap .promotion-block .promotion-block-pic {
   position: relative;
   display: inline-block;
@@ -28,17 +34,6 @@
   overflow: hidden;
 }
 
-.promotion-list-wrap .promotion-block .promotion-block-pic .zoom.skew {
-  background-color: rgba(0, 0, 0, 0.3);
-  left: auto;
-  margin: 0;
-  bottom: auto;
-  top: 17px;
-  right: 17px;
-  text-indent: 9999px;
-  overflow: hidden;
-}
-
 .promotion-list-wrap .promotion-block .promotion-block-pic img {
   display: block;
   width: 100%;
@@ -46,28 +41,47 @@
   opacity: 1;
 }
 
+@media screen and (max-width: 480px) {
+  .promotion-list-wrap .promotion-block .promotion-block-pic {
+    width: 70%;
+    margin: auto;
+  }
+}
+
 .promotion-list-wrap .promotion-block .promotion-block-txt {
   display: inline-block;
   vertical-align: top;
   width: 60%;
-  vertical-align: top;
   text-align: left;
   background-color: rgba(0, 0, 0, 0.3);
   border-radius: 50px 0 50px 0;
-  -webkit-border-radius: 50px 0 50px 0;
   padding: 50px 160px;
   z-index: 1;
   min-height: 460px;
   margin-right: -106px;
 }
 
+@media screen and (max-width: 480px) {
+  .promotion-list-wrap .promotion-block .promotion-block-txt {
+    margin: 0;
+    width: 95%;
+    padding: 40px 0;
+  }
+}
+
 .promotion-list-wrap .promotion-block .promotion-block-txt h3 {
-  font-weight: normal;
+  font-weight: 700;
   font-size: 34px;
-  text-transform: uppercase;
   line-height: 40px;
   color: #fff;
   margin-bottom: 30px;
+}
+
+@media screen and (max-width: 480px) {
+  .promotion-list-wrap .promotion-block .promotion-block-txt h3 {
+    font-size: 2rem;
+    text-align: center;
+  }
 }
 
 .promotion-list-wrap .promotion-block .promotion-block-txt p {
@@ -79,6 +93,13 @@
   margin-bottom: 25px;
 }
 
+@media screen and (max-width: 480px) {
+  .promotion-list-wrap .promotion-block .promotion-block-txt p {
+    font-size: 0.7rem;
+    padding: 0 25px;
+  }
+}
+
 .promotion-list-wrap .promotion-block .l-social {
   position: absolute;
   top: 50%;
@@ -86,6 +107,12 @@
   margin-top: -56px;
   z-index: 10;
   text-align: center;
+}
+
+@media screen and (max-width: 480px) {
+  .promotion-list-wrap .promotion-block .l-social {
+    top: 71px;
+  }
 }
 
 .promotion-list-wrap .promotion-block .l-social li {

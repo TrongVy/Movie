@@ -1,0 +1,27 @@
+.paginationBttns {
+    width: 100%;
+    height: 40px;
+    padding: 0 28rem;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+}
+.previous, .next  {
+    background-color: aliceblue;
+    line-height: 36px;
+    a {
+        text-decoration: none;
+    }
+}
+.paginationActive {
+    border: solid 1px #0b8ce7;
+    border-radius: 12px;
+    height: 23px;
+    width: 23px;
+    line-height: 18px;
+}
+
+.paginationDisabled a{
+    color: silver;
+    cursor: context-menu;
+}

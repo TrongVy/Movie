@@ -1,0 +1,125 @@
+.item__phim_main {
+  margin: 8px -11px;
+}
+
+.item__phim_main .item__phim {
+  background-color: #e00d7a;
+  height: auto;
+  border-radius: 30px;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  padding: 12px;
+}
+
+@media screen and (max-width: 800px) {
+  .item__phim_main .item__phim {
+    height: auto;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    width: 100%;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .item__phim_main .item__phim {
+    width: 27.5rem;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .item__phim_main .item__phim {
+    width: 18rem;
+  }
+}
+
+.item__phim_main .item__phim:hover {
+  background-color: #f37520;
+}
+
+.item__phim_main .item__phim img {
+  width: 100%;
+  border-radius: 23px;
+  margin: 22px 0px;
+}
+
+@media screen and (max-width: 800px) {
+  .item__phim_main .item__phim img {
+    height: 15rem;
+    width: 16.5rem;
+    margin: auto;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .item__phim_main .item__phim img {
+    height: 15rem;
+    width: 10.7rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .item__phim_main .item__phim img {
+    height: 25rem;
+    width: 24.2rem;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .item__phim_main .item__phim img {
+    height: 25rem;
+    width: 14.7rem;
+  }
+}
+
+.item__phim_main .item__phim .item__moTa {
+  overflow: auto;
+  height: 7rem;
+}
+
+@media screen and (max-width: 800px) {
+  .item__phim_main .item__phim .item__moTa {
+    height: 10rem;
+    width: 16rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .item__phim_main .item__phim .item__moTa {
+    height: 10rem;
+    width: 11rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .item__phim_main .item__phim .item__moTa {
+    height: 10rem;
+    width: 130%;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 0.7rem;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 5px grey;
+          box-shadow: inset 0 0 5px grey;
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: palevioletred;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: plum;
+}
+/*# sourceMappingURL=HomeItemNews.css.map */

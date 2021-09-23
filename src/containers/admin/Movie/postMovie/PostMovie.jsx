@@ -1,6 +1,6 @@
 import React from "react";
 import { useFormik } from "formik";
-// import moment from "moment";
+import moment from "moment";
 import { useDispatch } from "react-redux";
 import { actFormDate } from "./action";
 
@@ -22,7 +22,7 @@ export default function PostMovie() {
     },
     onSubmit: (value) => {
       // console.log("value", moment(value.ngayKhoiChieu).format("DD/MM/YYYY"));
-      console.log("value", value);
+      // console.log("value", value);
 
       // form data
 
@@ -32,16 +32,20 @@ export default function PostMovie() {
         formData.append(key, value[key]);
       }
       //call api
-      dispatch(actFormDate(formData));
+      dispatch(actFormDate(formData, dispatch));
     },
   });
 
   // custom hình
   const handleChangeImage = (e) => {
     let image = e.target.files[0];
-
     formik.setFieldValue("hinhAnh", image);
   };
+
+  // set value
+  const handleChangeDate = (e) => {
+    formik.setFieldValue(moment(e.target.value).format('DD/MM/YYYY'))
+  }
 
   return (
     <div>
@@ -72,14 +76,6 @@ export default function PostMovie() {
                 <h5 className="modal-title" id="staticBackdropLabel">
                   Modal Movie
                 </h5>
-                <button
-                  type="button"
-                  className="close"
-                  data-dismiss="modal"
-                  aria-label="Close"
-                >
-                  <span aria-hidden="true">×</span>
-                </button>
               </div>
               <div className="modal-body">
                 {/* form in here */}
@@ -92,6 +88,7 @@ export default function PostMovie() {
                           type="text"
                           className="form-control"
                           name="tenPhim"
+                          placeholder='Ten Phim'
                           onChange={formik.handleChange}
                         />
                       </div>
@@ -119,6 +116,7 @@ export default function PostMovie() {
                           className="form-control"
                           name="biDanh"
                           onChange={formik.handleChange}
+                          placeholder='ten-phim'
                         />
                       </div>
                     </div>
@@ -130,6 +128,7 @@ export default function PostMovie() {
                           className="form-control"
                           name="trailer"
                           onChange={formik.handleChange}
+                          placeholder='url youtube'
                         />
                       </div>
                     </div>
@@ -179,6 +178,7 @@ export default function PostMovie() {
                           className="form-control"
                           name="danhGia"
                           onChange={formik.handleChange}
+                          placeholder='0 -> 10'
                         />
                       </div>
                     </div>
@@ -192,6 +192,7 @@ export default function PostMovie() {
                           className="form-control"
                           name="maNhom"
                           onChange={formik.handleChange}
+                          placeholder='Từ GP01 -> GP15'
                         />
                       </div>
                     </div>
@@ -202,7 +203,7 @@ export default function PostMovie() {
                           type="date"
                           className="form-control"
                           name="ngayKhoiChieu"
-                          onChange={formik.handleDate}
+                          onChange={handleChangeDate}
                         />
                       </div>
                     </div>
@@ -216,6 +217,7 @@ export default function PostMovie() {
                           className="form-control"
                           name="moTa"
                           onChange={formik.handleChange}
+                          placeholder='Một bộ phim rất hay và giàu cảm súc'
                         />
                       </div>
                     </div>

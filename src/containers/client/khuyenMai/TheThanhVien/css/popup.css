@@ -1,14 +1,17 @@
 .popup-box {
+  position: fixed;
   opacity: 1;
   width: 100%;
-  height: auto;
-  padding-top: 7rem;
-  top: auto;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding-top: 1rem;
   z-index: 2;
   background-color: rgba(255, 255, 255, 0.9);
 }
 
 .popup-box .container {
+  display: inline;
   width: 90%;
   max-width: 1000px;
   height: auto;

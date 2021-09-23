@@ -1,0 +1,104 @@
+.filter {
+  margin: 0 300px;
+  text-align: center;
+  position: relative;
+  font-size: 16px;
+  font-weight: 500;
+  color: #e00d7a;
+  height: 50px;
+  background: #000;
+}
+
+.filter select {
+  border: 2px solid orange;
+  border-radius: 20px 5px 20px 5px;
+  color: #33f303;
+  background: #000;
+  padding: 3px;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.filter select:focus-visible {
+  outline: none;
+}
+
+.filter select:hover {
+  font-size: 18px;
+  color: white;
+  background: black;
+  cursor: pointer;
+}
+
+.filter__col2 {
+  padding-left: 50px;
+}
+
+.filter__content {
+  border: 2px solid #b90462;
+  position: absolute;
+  z-index: 5;
+  top: -18px;
+  left: 0;
+  width: 100%;
+  background: #fff;
+  padding: 15px;
+  margin-bottom: 10px;
+  -webkit-box-shadow: -6px 14px 5px -1px rgba(0, 0, 0, 0.75);
+          box-shadow: -6px 14px 5px -1px rgba(0, 0, 0, 0.75);
+}
+
+.filter__btn {
+  pointer-events: none;
+  cursor: default;
+  color: #b90462;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.chon_rap {
+  display: none;
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+}
+
+@media (max-width: 1430px) {
+  .filter {
+    margin: 0 200px;
+  }
+  .filter_list_film {
+    margin-right: 5px;
+  }
+}
+
+@media (max-width: 1240px) {
+  .filter {
+    margin: 0 100px;
+  }
+  .filter_list_film {
+    margin-right: 5px;
+  }
+}
+
+@media (max-width: 1030px) {
+  .filter {
+    margin: 0 100px;
+    font-size: 14px;
+  }
+  .filter h4 {
+    font-size: 18px;
+  }
+  .filter__col2 {
+    padding-left: 50px;
+  }
+  .filter_list_film {
+    margin-right: 5px;
+  }
+}
+
+@media (max-width: 845px) {
+  .filter {
+    display: none;
+  }
+}
+/*# sourceMappingURL=filter.css.map */

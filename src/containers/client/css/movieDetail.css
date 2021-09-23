@@ -1,0 +1,200 @@
+.movie_detail {
+  margin-top: 100px;
+  padding: 10px;
+}
+
+.movie_detail__header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  max-height: 400px;
+  padding: 0 100px;
+}
+
+.movie_detail__header__left {
+  position: relative;
+  border: 2px solid gray;
+  padding: 5px;
+  background: #fae2a2;
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+          box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  margin-right: 20px;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+.movie_detail__header__left__trailer {
+  position: absolute;
+  z-index: -1;
+  bottom: 0px;
+  left: 0px;
+  opacity: 0;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+.movie_detail__header__left__trailer a {
+  text-decoration: none;
+  padding: 5px 10px;
+  color: black;
+  background: #e00d7a;
+  border-radius: 20px 0px 20px 0px;
+  font-size: 20px;
+  overflow: hidden;
+  font-weight: bold;
+}
+
+.movie_detail__header__left__trailer a:hover {
+  text-decoration: none;
+  outline: none;
+  font-size: 22px;
+  color: white;
+}
+
+.movie_detail__header__left img {
+  width: auto;
+  height: 380px;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  overflow: hidden;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+
+.movie_detail__header__left img:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.movie_detail__header__left:hover .movie_detail__header__left__trailer {
+  opacity: 1;
+  left: 80px;
+  bottom: 15px;
+  z-index: 1;
+}
+
+.movie_detail__header__left:hover img {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.movie_detail__header__right {
+  padding: 20px 20px;
+  color: white;
+  text-align: left;
+  font-size: 20px;
+  background: #f18720;
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+          box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+}
+
+.movie_detail__header__right h2 {
+  color: black;
+}
+
+.movie_detail__header__right__A span {
+  color: black;
+  background: white;
+  padding: 10px 20px;
+  border-radius: 50px 0px 50px 0px;
+}
+
+.movie_detail__header__right__B {
+  text-align: left;
+}
+
+.movie_detail__header__right__B__8 {
+  color: black;
+  font-weight: 600;
+  background: white;
+  padding: 20px 30px;
+  font-size: 18px;
+  border: 2px solid #20deff;
+  border-radius: 80px 0px 80px 0px;
+}
+
+.movieDetail {
+  background-color: #f4c545;
+}
+
+@media (max-width: 1100px) {
+  .movie_detail__header {
+    padding: 0 50px;
+  }
+}
+
+@media (max-width: 990px) {
+  .movie_detail__header {
+    padding: 0 10px;
+    font-size: 16px;
+  }
+  .movie_detail__header__left {
+    width: 250px;
+  }
+  .movie_detail__header__left img {
+    width: 230px;
+  }
+  .movie_detail__header__right__B__8 {
+    font-size: 16px;
+    padding: 10px 10px 10px 30px;
+  }
+}
+
+@media (max-width: 760px) {
+  .movie_detail__header {
+    padding: 0 5px;
+    display: block;
+    max-height: 100%;
+  }
+  .movie_detail__header__left {
+    width: 100%;
+    margin: 0px 0px 10px 0px;
+    padding: 0px;
+  }
+  .movie_detail__header__left__trailer {
+    opacity: 1;
+    bottom: 20px;
+    left: 200px;
+  }
+  .movie_detail__header__left img {
+    width: 230px;
+  }
+  .movie_detail__header__left:hover .movie_detail__header__left__trailer {
+    bottom: 20px;
+    left: 310px;
+  }
+  .movie_detail__header__right__B__8 {
+    font-size: 16px;
+    padding: 10px 10px 10px 30px;
+  }
+}
+
+@media (max-width: 580px) {
+  .movie_detail__header {
+    padding: 0 5px;
+    display: block;
+    max-height: 100%;
+  }
+  .movie_detail__header__left {
+    width: 100%;
+    margin: 0px 0px 10px 0px;
+    padding: 0px;
+  }
+  .movie_detail__header__left__trailer {
+    opacity: 1;
+    bottom: 20px;
+    left: 100px;
+  }
+  .movie_detail__header__left img {
+    width: 230px;
+  }
+  .movie_detail__header__left:hover .movie_detail__header__left__trailer {
+    bottom: 20px;
+    left: 160px;
+  }
+  .movie_detail__header__right__B__8 {
+    font-size: 16px;
+    padding: 10px 10px 10px 30px;
+  }
+}
+/*# sourceMappingURL=movieDetail.css.map */

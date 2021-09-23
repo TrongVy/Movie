@@ -26,11 +26,11 @@ export default function PutMovie(props) {
     },
     onSubmit: (value) => {
       console.log("value", value);
-
       // form data
       let formData = new FormData();
       for (let key in value) {
         formData.append(key, value[key]);
+        console.log(key, value[key])
       }
       
       // call api
@@ -74,16 +74,6 @@ export default function PutMovie(props) {
                 <h1 className="modal-title" id="staticBackdropLabel">
                   Update Film
                 </h1>
-                <button
-                  type="button"
-                  className="close"
-                  data-dismiss="modal"
-                  aria-label="Close"
-                >
-                  <span aria-hidden="true" onClick={() => setImage("")}>
-                    ×
-                  </span>
-                </button>
               </div>
               <div className="modal-body">
                 {/* form in here */}
@@ -237,7 +227,7 @@ export default function PutMovie(props) {
                     </div>
                   </div>
                   <div className="modal-footer">
-                    <button type="submit" className="btn btn-success">
+                    <button type="submit" className="btn btn-success" >
                       Update
                     </button>
                     <button

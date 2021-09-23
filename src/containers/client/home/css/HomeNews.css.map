@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AACI,MAAM,CAAC,MAAM,MAAM,SAAS,EAAE,KAAK;EADvC,AAAA,eAAe,CAAC;IAEV,cAAc,EAAE,MAAM;GAE3B",
+    "sources": [
+        "../HomeListNews/HomeNews.scss"
+    ],
+    "names": [],
+    "file": "HomeNews.css"
+}

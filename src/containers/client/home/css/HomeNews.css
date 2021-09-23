@@ -1,0 +1,9 @@
+@media screen and (max-width: 480px) {
+  .home__list_new {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+/*# sourceMappingURL=HomeNews.css.map */

@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "../review/review.scss"
+    ],
+    "names": [],
+    "file": "review.css"
+}

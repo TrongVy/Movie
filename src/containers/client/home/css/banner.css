@@ -1,0 +1,73 @@
+.banner {
+  height: 60px;
+  margin-top: 100px;
+  background-color: #fff;
+}
+
+.banner__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.banner__item__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.banner__item__content a {
+  text-decoration: none;
+  padding: 18px 0px 0px 0px;
+  color: #e00d7a;
+  font-size: 20px;
+  font-weight: bold;
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
+
+.banner__item__content a:hover {
+  color: #f2b819;
+}
+
+.call {
+  font-size: 20px;
+}
+
+.call a {
+  padding: 10px 0px 0px 0px;
+  color: #f2b819;
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+  font-size: 25px;
+}
+
+.call img {
+  padding-top: 10px;
+}
+
+.call a:hover {
+  color: #e00d7a;
+}
+
+@media (max-width: 770px) {
+  .banner__item__content a {
+    font-size: 16px;
+  }
+  .call a {
+    font-size: 16px;
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 570px) {
+  .banner__item__content a {
+    display: none;
+  }
+  .call a {
+    display: none;
+  }
+}
+/*# sourceMappingURL=banner.css.map */
