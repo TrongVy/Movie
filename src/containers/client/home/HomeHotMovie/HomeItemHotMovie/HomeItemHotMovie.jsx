@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import "./HomeItemNews.scss";
-export default class HomeItemNews extends Component {
+import "./HomeItemHotMovie.scss";
+export default class HomeItemHotMovie extends Component {
 
   render() {
     const { hinhAnh, hot, tenPhim, moTa } = this.props.movie;

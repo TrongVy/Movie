@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import "./HomeNews.scss";
-import HomeItemNews from "./HomeItemNews/HomeItemNews";
+import "./HomeHotMovie.scss";
+import HomeItemHotMovie from "./HomeItemHotMovie/HomeItemHotMovie";
 import { actFetchAllMovie } from "../module/action";
 
 class HomeListNews extends Component {
@@ -24,7 +24,7 @@ class HomeListNews extends Component {
         <h3 className="text-center mb-5">PHIM ĐANG HOT</h3>
         <div className="row justify-content-center">
           {this.genderItem().map((movie, index) => {
-            return <HomeItemNews movie={movie} key={index} />;
+            return <HomeItemHotMovie movie={movie} key={index} />;
           })}
           <button className="btn btn-danger" onClick={this.toggle}>
             {this.state.isOpen ? "Thu lại" : "Xem thêm"}
