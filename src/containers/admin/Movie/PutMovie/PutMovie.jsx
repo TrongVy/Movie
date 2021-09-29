@@ -30,7 +30,7 @@ export default function PutMovie(props) {
       let formData = new FormData();
       for (let key in value) {
         formData.append(key, value[key]);
-        console.log(key, value[key])
+        // console.log(key, value[key])
       }
       
       // call api

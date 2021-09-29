@@ -3,14 +3,16 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import './HomeUuDai.scss'
-
+import { Link } from "react-router-dom";
 
 class CustomSlide extends Component {
   render() {
     const { img, ...props } = this.props;
     return (
       <div {...props}>
+        <Link to='/khuyenMai'>
         <h3 className='home__uu_dai_bg_img'>{(img)}</h3>
+        </Link>
       </div>
     );
   }
@@ -18,6 +20,8 @@ class CustomSlide extends Component {
 
 export default class HomeUuDai extends Component {
   render() {
+  const {history} = this.props
+
     const settings = {
       dots: true,
       infinite: true,

@@ -42,7 +42,7 @@ export default function PostMovie() {
     formik.setFieldValue("hinhAnh", image);
   };
 
-  // set value
+  // set date
   const handleChangeDate = (e) => {
     formik.setFieldValue(moment(e.target.value).format('DD/MM/YYYY'))
   }
@@ -200,7 +200,7 @@ export default function PostMovie() {
                       <div className="form-group">
                         <h5>Khởi chiếu</h5>
                         <input
-                          type="date"
+                          type="datetime-local"
                           className="form-control"
                           name="ngayKhoiChieu"
                           onChange={handleChangeDate}

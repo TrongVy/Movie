@@ -1,5 +1,8 @@
 .item__phim_main {
   margin: 8px -11px;
+  @media screen and (max-width: 320px) {
+    display: inline-table;
+  }
   .item__phim {
     background-color: #e00d7a;
     height: auto;
@@ -12,10 +15,11 @@
       width: 100%;
       flex-direction: column-reverse;
     }
-    @media screen and (max-width:480px) {
-      width: 27.5rem;
-    }
-    @media screen and (max-width:320px) {
+    // @media screen and (max-width:480px) {
+    //   width: 8.5rem;
+    //   height: 19rem;
+    // }
+    @media screen and (max-width: 320px) {
       width: 18rem;
     }
     &:hover {
@@ -35,12 +39,12 @@
         width: 10.7rem;
       }
       @media screen and (max-width: 480px) {
-        height: 25rem;
-        width: 24.2rem;
+        height: 11rem;
+        width: 9rem;
       }
       @media screen and (max-width: 320px) {
         height: 25rem;
-        width: 14.7rem
+        width: 14.7rem;
       }
     }
     .item__moTa {

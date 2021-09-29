@@ -4,7 +4,8 @@ import { actFetchAllMovie } from "containers/client/home/module/action"
 export const actFormDate = (formDate, dispatch) => {
     return(
         movieApi.postMovies(formDate).then( res => {
-            console.log(res.data.content)
+            // console.log(res.data.content)
+            alert('Thêm thành công')
             dispatch(actFetchAllMovie())
         })
         .catch( error => {
