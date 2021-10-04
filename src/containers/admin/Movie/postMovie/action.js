@@ -9,6 +9,7 @@ export const actFormDate = (formDate, dispatch) => {
             dispatch(actFetchAllMovie())
         })
         .catch( error => {
+            alert(error.content)
             console.log(error.response?.data)
         })
     )
